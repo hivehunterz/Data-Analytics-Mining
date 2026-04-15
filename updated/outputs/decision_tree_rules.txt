@@ -1,0 +1,98 @@
+Decision Tree Rules
+Positive diff = Team A is higher
+Label 1 = Team A wins
+
+|--- bpm <= -0.01
+|   |--- bpm <= -1.66
+|   |   |--- starter_avg_bpm <= -3.69
+|   |   |   |--- max_bpm <= 8.75
+|   |   |   |   |--- starter_avg_bpm <= -4.51
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- starter_avg_bpm >  -4.51
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- max_bpm >  8.75
+|   |   |   |   |--- pts_per_game <= 1.12
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- pts_per_game >  1.12
+|   |   |   |   |   |--- class: 1
+|   |   |--- starter_avg_bpm >  -3.69
+|   |   |   |--- stl_per_game <= 0.23
+|   |   |   |   |--- impact_score_avg <= -0.59
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- impact_score_avg >  -0.59
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- stl_per_game >  0.23
+|   |   |   |   |--- max_bpm <= -1.75
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- max_bpm >  -1.75
+|   |   |   |   |   |--- class: 0
+|   |--- bpm >  -1.66
+|   |   |--- bpm <= -0.89
+|   |   |   |--- impact_score_avg <= 0.07
+|   |   |   |   |--- bench_avg_bpm <= -1.32
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- bench_avg_bpm >  -1.32
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- impact_score_avg >  0.07
+|   |   |   |   |--- three_par <= -0.09
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- three_par >  -0.09
+|   |   |   |   |   |--- class: 0
+|   |   |--- bpm >  -0.89
+|   |   |   |--- scoring_balance <= 0.58
+|   |   |   |   |--- ftr <= -0.02
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- ftr >  -0.02
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- scoring_balance >  0.58
+|   |   |   |   |--- top_scorer_ppg <= 4.75
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- top_scorer_ppg >  4.75
+|   |   |   |   |   |--- class: 0
+|--- bpm >  -0.01
+|   |--- bpm <= 1.66
+|   |   |--- bpm <= 0.89
+|   |   |   |--- scoring_balance <= -0.58
+|   |   |   |   |--- top_scorer_ppg <= -4.75
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- top_scorer_ppg >  -4.75
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- scoring_balance >  -0.58
+|   |   |   |   |--- ftr <= 0.02
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- ftr >  0.02
+|   |   |   |   |   |--- class: 1
+|   |   |--- bpm >  0.89
+|   |   |   |--- impact_score_avg <= -0.07
+|   |   |   |   |--- three_par <= 0.09
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- three_par >  0.09
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- impact_score_avg >  -0.07
+|   |   |   |   |--- bench_avg_bpm <= 1.32
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- bench_avg_bpm >  1.32
+|   |   |   |   |   |--- class: 1
+|   |--- bpm >  1.66
+|   |   |--- starter_avg_bpm <= 3.69
+|   |   |   |--- stl_per_game <= -0.23
+|   |   |   |   |--- max_bpm <= 1.75
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- max_bpm >  1.75
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- stl_per_game >  -0.23
+|   |   |   |   |--- impact_score_avg <= 0.59
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- impact_score_avg >  0.59
+|   |   |   |   |   |--- class: 1
+|   |   |--- starter_avg_bpm >  3.69
+|   |   |   |--- max_bpm <= -8.75
+|   |   |   |   |--- pts_per_game <= -1.12
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- pts_per_game >  -1.12
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- max_bpm >  -8.75
+|   |   |   |   |--- starter_avg_bpm <= 4.51
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- starter_avg_bpm >  4.51
+|   |   |   |   |   |--- class: 1

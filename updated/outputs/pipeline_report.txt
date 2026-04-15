@@ -1,0 +1,403 @@
+======================================================================
+  NCAA MARCH MADNESS 2026 — UPDATED PIPELINE
+  Started: 2026-04-07 20:05:21
+  Output:  C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/
+  Log:     C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs\pipeline_report.txt
+======================================================================
+
+======================================================================
+  STAGE 1/10: LOAD DATA, CLEAN, FEATURE ENGINEER
+======================================================================
+  [20:05:21]
+    >> Loading C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\..\data\mm2026_train.csv ...
+    >> Raw shape: 13299 rows x 56 columns
+    >> Seasons: 2011 – 2026
+    >> Updated 921 rows for 2026 tournament results
+
+  2026 result distribution:
+    R68           4  (expected 4)
+    R64          32  (expected 32)
+    R32          16  (expected 16)
+    S16           8  (expected 8)
+    E8            4  (expected 4)
+    F4            2  (expected 2)
+    NCG           1  (expected 1)
+    Champion      1  (expected 1)
+    >> Saved C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\..\data\mm2026_updated.csv
+    >> Dropped metadata columns
+    >> Filtered: 13299 -> 10028 players (>=5 GP, >=5 MPG)
+    >> Imputed missing values with median
+    >> Deep run (Sweet 16+): 2288 players (22.8%)
+    >> Unique teams: 245, Unique players: 6519
+    >> Created 7 engineered features
+    >> Stage 1-3 complete. 10028 player-seasons ready.
+
+======================================================================
+  STAGE 4/10: STATISTICAL SIGNIFICANCE TESTING (2011-2025)
+======================================================================
+  [20:05:22]
+    >> Using 2011-2025 only: 9307 players
+    >> Deep Run: 2128  |  Early Exit: 7179
+
+  Bonferroni-corrected alpha = 0.0020 (25 tests)
+
+  Stat                          Deep    Early    Diff  Cohen d    p-value  Sig
+  ------------------------------------------------------------------------------
+  pts_per_game                 7.922    7.532  +0.390   +0.080   1.53e-03   **
+  trb_per_game                 3.541    3.374  +0.167   +0.080   1.49e-03   **
+  ast_per_game                 1.539    1.441  +0.098   +0.075   3.93e-03    *
+  stl_per_game                 0.709    0.679  +0.030   +0.063   1.14e-02    *
+  blk_per_game                 0.438    0.388  +0.049   +0.101   8.00e-05  ***
+  fg_pct                       0.465    0.454  +0.011   +0.117   3.19e-06  ***
+  three_p_pct                  0.327    0.317  +0.010   +0.079   1.84e-03   **
+  ts_pct                       0.552    0.542  +0.010   +0.136   4.64e-08  ***
+  efg_pct                      0.524    0.513  +0.011   +0.139   2.38e-08  ***
+  per                         16.470   15.353  +1.116   +0.191   1.20e-14  ***
+  ws                           2.802    2.261  +0.542   +0.315   6.64e-31  ***
+  bpm                          4.893    2.210  +2.683   +0.635  1.99e-149  ***
+  obpm                         2.028    0.586  +1.442   +0.419   2.15e-65  ***
+  dbpm                         2.867    1.624  +1.243   +0.717  8.48e-196  ***
+  dws                          1.238    1.032  +0.206   +0.307   1.15e-29  ***
+  ows                          1.564    1.230  +0.334   +0.281   2.22e-25  ***
+  usg_pct                      0.189    0.189  -0.000   -0.004   8.78e-01     
+  tov_per_game                 1.168    1.183  -0.015   -0.021   3.99e-01     
+  ftr                          0.368    0.372  -0.004   -0.019   4.18e-01     
+  three_par                    0.343    0.346  -0.003   -0.011   6.44e-01     
+  scoring_efficiency           4.505    4.217  +0.288   +0.099   9.21e-05  ***
+  defensive_impact             1.147    1.068  +0.079   +0.114   5.84e-06  ***
+  playmaking_index             0.371    0.258  +0.113   +0.123   2.47e-06  ***
+  rebounding_rate              6.931    6.690  +0.242   +0.083   1.12e-03   **
+  win_shares_per_game          0.082    0.071  +0.011   +0.221   1.52e-17  ***
+
+  Large effect (|d|>=0.5): 2
+    dbpm                      d=+0.717  p=8.48e-196
+    bpm                       d=+0.635  p=1.99e-149
+  Medium effect: 5
+    obpm                      d=+0.419  p=2.15e-65
+    ws                        d=+0.315  p=6.64e-31
+    dws                       d=+0.307  p=1.15e-29
+    ows                       d=+0.281  p=2.22e-25
+    win_shares_per_game       d=+0.221  p=1.52e-17
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage4_effect_sizes.png
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage4_distributions.png
+    >> Stage 4 complete.
+
+======================================================================
+  STAGE 5/10: DEEP RUN PREDICTION (RF + XGBoost + LightGBM + CatBoost)
+======================================================================
+  [20:05:24]
+    >> Training on 2011-2025: 9307 rows
+
+  === PLAYER-ONLY MODELS (37 features) ===
+  Model                     AUC    Brier   LogLoss
+  ------------------------------------------------
+  RF (player-only)       0.7551   0.1508    0.4627
+
+  === COMBINED MODELS (41 features) — with RandomizedSearchCV ===
+  Model                     AUC    Brier   LogLoss Best Params
+  ------------------------------------------------------------------------------------------
+
+    [*] Tuning RF (30 iterations x 5-fold CV)...
+    [*] RF tuning done. Running cross-val predict...
+  RF                     0.9773   0.0626    0.2202 {'n_estimators': 300, 'max_depth': None}
+
+    [*] Tuning XGBoost (30 iterations x 5-fold CV)...
+    [*] XGBoost tuning done. Running cross-val predict...
+  XGBoost                1.0000   0.0019    0.0202 {'n_estimators': 500, 'max_depth': 5, 'learning_rate': 0.1}
+
+    [*] Tuning LightGBM (30 iterations x 5-fold CV)...
+    [*] LightGBM tuning done. Running cross-val predict...
+  LightGBM               1.0000   0.0015    0.0169 {'num_leaves': 31, 'n_estimators': 500, 'max_depth': 7, 'learning_rate': 0.05}
+
+    [*] Tuning CatBoost (30 iterations x 5-fold CV)...
+    [*] CatBoost tuning done. Running cross-val predict...
+  CatBoost               1.0000   0.0017    0.0212 {'learning_rate': 0.1, 'iterations': 300, 'depth': 8}
+
+  === WIN SHARES ABLATION (BPM-only vs full) ===
+    [*] Running ablation with XGBoost (full features)...
+    [*] Running ablation without Win Shares...
+  With WS features:     AUC = 1.0000  (41 features)
+  Without WS features:  AUC = 1.0000  (36 features)
+  Delta:                +0.0000
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage5_feature_importance.png
+
+  Top 15 PLAYER-ONLY features:
+    dbpm                           0.0959
+    bpm                            0.0811
+    obpm                           0.0405
+    ws                             0.0347
+    win_shares_per_game            0.0306
+    ws_40                          0.0292
+    scoring_efficiency             0.0281
+    per                            0.0274
+    usage_efficiency               0.0271
+    usg_pct                        0.0261
+    ast_pct                        0.0259
+    dws                            0.0257
+    minutes_per_game               0.0250
+    drb_pct                        0.0249
+    ts_pct                         0.0246
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage5_player_only_importance.png
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage5_calibration.png
+
+    >> Models trained: ['RF', 'XGBoost', 'LightGBM', 'CatBoost']
+    >> Stage 5 complete.
+
+======================================================================
+  STAGE 6/10: TEMPORAL TRENDS & CONFERENCE ANALYSIS
+======================================================================
+  [20:35:17]
+
+  Metric                      Slope/yr        r          p   Sig
+  --------------------------------------------------------------
+  Avg PPG                     +0.03463   0.6926     0.0042    ** UP
+  Avg 3P%                     +0.00011   0.0824     0.7703       UP
+  3-Pt Attempt Rate           +0.00581   0.9277     0.0000   *** UP
+  True Shooting %             +0.00178   0.8337     0.0001   *** UP
+  Avg PER                     +0.01215   0.2561     0.3570       UP
+  Avg Usage %                 -0.00004  -0.1767     0.5288       DOWN
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage6_temporal_trends.png
+
+  Top conferences by tournament success:
+             avg_games_won  deep_run_rate  avg_seed  player_count  avg_srs
+conference                                                                
+ACC                  1.689          0.465     5.558           804   17.364
+SEC                  1.459          0.390     5.755           869   17.365
+BIG-TEN              1.406          0.325     5.684           977   17.574
+WCC                  1.347          0.259     6.313           259   17.616
+BIG-EAST             1.322          0.301     5.836           791   16.331
+BIG-12               1.306          0.312     5.201           953   17.637
+PAC-12               1.291          0.417     7.023           484   15.547
+AAC                  1.120          0.251     6.277           267   16.003
+MVC                  1.068          0.229     9.346           205   12.339
+CUSA                 0.667          0.068    11.870           162    7.514
+ATLANTIC-10          0.607          0.100     9.012           402   11.376
+MWC                  0.590          0.135     7.953           385   12.890
+
+  Chi-squared (conference vs deep run): chi2=1334.2, p=5.13e-261, dof=31
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage6_conference_analysis.png
+
+  Spearman (seed vs games_won): rho=-0.5930, p=0.00e+00
+    >> Stage 6 complete.
+
+======================================================================
+  STAGE 7/10: EXCEPTIONAL PLAYER IDENTIFICATION
+======================================================================
+  [20:35:19]
+    >> Expected wins computed from 2011-2025 (9307 players)
+
+  Expected wins by seed:
+    Seed  1: 3.16
+    Seed  2: 2.11
+    Seed  3: 1.81
+    Seed  4: 1.73
+    Seed  5: 1.08
+    Seed  6: 0.72
+    Seed  7: 0.99
+    Seed  8: 0.81
+    Seed  9: 0.69
+    Seed 10: 0.49
+    Seed 11: 0.99
+    Seed 12: 0.49
+    Seed 13: 0.22
+    Seed 14: 0.12
+    Seed 15: 0.23
+    Seed 16: 0.04
+
+  Exceptional players: 271  |  Upset stars: 143
+
+  --- TOP 25 EXCEPTIONAL TOURNAMENT PERFORMERS ---
+  Player                 Team                 Yr Seed Result     Won   PPG   BPM  DBPM  Score
+  -----------------------------------------------------------------------------------------------
+  Anthony Davis          Kentucky           2012    1 Champion     6  14.2  17.2   8.1   3.30
+  Zach Edey              Purdue             2024    1 Runner-Up    5  25.2  16.8   3.7   2.89
+  Frank Kaminsky         Wisconsin          2015    1 Runner-Up    5  18.8  16.2   5.0   2.80
+  Cooper Flagg           Duke               2025    1 F4           4  19.2  16.3   6.7   2.71
+  Delon Wright           Utah               2015    5 S16          2  14.5  15.5   6.9   2.66
+  Sindarius Thornwell    South Carolina     2017    7 F4           4  21.4  17.1   6.2   2.52
+  Thomas Walkup          Stephen F. Austin  2016   14 R32          1  18.1  14.2   4.7   2.48
+  Yaxel Lendeborg        Michigan           2026    1 Champion     6  14.6  16.6   7.2   2.48
+  Karl-Anthony Towns     Kentucky           2015    1 F4           4  10.3  14.3   7.6   2.37
+  Donovan Clingan        Connecticut        2024    1 Champion     6  13.0  15.0   6.2   2.29
+  Ethan Happ             Wisconsin          2017    8 S16          2  14.0  14.3   6.7   2.28
+  Jae Crowder            Marquette          2012    3 S16          2  17.5  13.8   5.4   2.26
+  Kemba Walker           Connecticut        2011    3 Champion     6  23.5  13.1   3.9   2.23
+  Evan Mobley            Southern California 2021    6 E8           3  16.4  13.7   5.8   2.20
+  Zuby Ejiofor           St. John's (NY)    2026    5 S16          2  16.3  14.4   6.0   2.13
+  Brice Johnson          North Carolina     2016    1 Runner-Up    5  17.0  12.7   4.2   2.13
+  Aday Mara              Michigan           2026    1 Champion     6  11.6  14.0   8.5   2.11
+  Mikal Bridges          Villanova          2018    1 Champion     6  17.7  12.9   4.1   2.08
+  Johni Broome           Auburn             2025    1 F4           4  18.6  14.3   4.7   2.08
+  Willie Cauley-Stein    Kentucky           2015    1 F4           4   8.9  12.6   7.1   2.06
+  Mark Williams          Duke               2022    2 F4           4  11.2  12.5   4.8   2.06
+  Trey Burke             Michigan           2013    4 Runner-Up    5  18.6  13.1   3.7   2.05
+  Ryan Kalkbrenner       Creighton          2025    9 R32          1  19.2  12.2   4.4   2.04
+  Nigel Williams-Goss    Gonzaga            2017    1 Runner-Up    5  16.8  10.8   5.1   2.03
+  Shabazz Napier         Connecticut        2014    7 Champion     6  18.0  12.0   4.5   2.01
+
+  --- TOP 15 UPSET STARS ---
+  Player                 Team                 Yr Seed Result       PPG   BPM  DBPM  Score
+  --------------------------------------------------------------------------------
+  Thomas Walkup          Stephen F. Austin  2016   14 R32         18.1  14.2   4.7   2.48
+  Ryan Kalkbrenner       Creighton          2025    9 R32         19.2  12.2   4.4   2.04
+  Bennett Stirtz         Drake              2025   11 R32         19.2  10.3   3.0   1.90
+  C.J. McCollum          Lehigh             2012   15 R32         21.9  11.2   3.4   1.83
+  Matisse Thybulle       Washington         2019    9 R32          9.1  11.6   8.9   1.79
+  Kenneth Faried         Morehead State     2011   13 R32         17.3   8.5   2.3   1.77
+  Nique Clifford         Colorado State     2025   12 R32         18.9  11.1   3.8   1.76
+  Arsalan Kazemi         Oregon             2013   12 S16          9.4  10.8   5.4   1.73
+  D'Angelo Russell       Ohio State         2015   10 R32         19.3  11.9   3.3   1.71
+  Ja Morant              Murray State       2019   12 R32         24.5  10.0   1.7   1.68
+  Dean Wade              Kansas State       2018    9 E8          16.2  11.7   3.9   1.67
+  Ryan Kalkbrenner       Creighton          2022    9 R32         13.1  11.0   3.6   1.65
+  N'Faly Dante           Oregon             2024   11 R32         17.0  12.7   4.9   1.65
+  Ron Baker              Wichita State      2016   11 R32         14.0  10.6   5.1   1.63
+  Jalen Pickett          Penn State         2023   10 R32         17.7  10.9   2.9   1.62
+    >> [saved] exceptional_players.csv  (271 rows)
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage7_exceptional_players.png
+    >> Stage 7 complete.
+
+======================================================================
+  STAGE 8/10: TEAM AGGREGATION & MATCHUP PREDICTION (with stacking)
+======================================================================
+  [20:35:19]
+  Aggregating 964 team-seasons...
+    [200/964] aggregated...
+    [400/964] aggregated...
+    [600/964] aggregated...
+    [800/964] aggregated...
+    [964/964] aggregated...
+  Created 964 team profiles with 30 features
+    >> Matchup features: 26
+
+  Generating matchup pairs (2011-2025)...
+    Train [1/14] 2011: 64 teams -> 1365 pairs so far
+    Train [2/14] 2012: 64 teams -> 2730 pairs so far
+    Train [3/14] 2013: 64 teams -> 4095 pairs so far
+    Train [4/14] 2014: 64 teams -> 5460 pairs so far
+    Train [5/14] 2015: 64 teams -> 6825 pairs so far
+    Train [6/14] 2016: 64 teams -> 8190 pairs so far
+    Train [7/14] 2017: 64 teams -> 9555 pairs so far
+    Train [8/14] 2018: 64 teams -> 10920 pairs so far
+    Train [9/14] 2019: 64 teams -> 12285 pairs so far
+    Train [10/14] 2021: 64 teams -> 13641 pairs so far
+    Train [11/14] 2022: 64 teams -> 15006 pairs so far
+    Train [12/14] 2023: 64 teams -> 16371 pairs so far
+    Train [13/14] 2024: 64 teams -> 17736 pairs so far
+    Train [14/14] 2025: 64 teams -> 19101 pairs so far
+  Train: 38202 samples (19101 unique pairs)
+
+  SEED-ONLY BASELINE (pick lower seed): 80.4%
+
+  Model                     AUC      Acc    Brier   LogLoss
+  ---------------------------------------------------------
+
+    [*] Tuning Random Forest (20 iterations x 5-fold CV)...
+    [*] Random Forest tuning done. Running cross-val evaluation...
+  Random Forest          0.9058   0.8202   0.1249    0.3890
+
+    [*] Tuning Decision Tree (20 iterations x 5-fold CV)...
+    [*] Decision Tree tuning done. Running cross-val evaluation...
+  Decision Tree          0.8914   0.8061   0.1335    0.4143
+
+    [*] Tuning XGBoost (20 iterations x 5-fold CV)...
+    [*] XGBoost tuning done. Running cross-val evaluation...
+  XGBoost                0.9170   0.8319   0.1176    0.3687
+
+    [*] Tuning LightGBM (20 iterations x 5-fold CV)...
+    [*] LightGBM tuning done. Running cross-val evaluation...
+  LightGBM               0.9164   0.8316   0.1195    0.3805
+
+    [*] Tuning CatBoost (20 iterations x 5-fold CV)...
+    [*] CatBoost tuning done. Running cross-val evaluation...
+  CatBoost               0.9164   0.8307   0.1170    0.3653
+
+  Training Stacking Ensemble (4 base learners -> LogisticRegression)...
+  Stacking Ensemble      0.9191   0.8338   0.1171    0.3729
+
+  Top 15 matchup features (RF importance):
+    bpm                                 0.1627
+    starter_avg_bpm                     0.1127
+    impact_score_avg                    0.0914
+    obpm                                0.0687
+    dbpm                                0.0593
+    bench_avg_bpm                       0.0457
+    max_bpm                             0.0444
+    max_dbpm                            0.0306
+    per                                 0.0267
+    stl_per_game                        0.0259
+    ast_per_game                        0.0232
+    ftr                                 0.0227
+    scoring_balance                     0.0226
+    pts_per_game                        0.0225
+    depth                               0.0217
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage9_matchup_feature_importance.png
+    >> [saved] decision_tree_rules.txt
+    >> [saved] team_profiles.csv
+
+    >> Models trained: ['Random Forest', 'Decision Tree', 'XGBoost', 'LightGBM', 'CatBoost', 'Stacking']
+    >> Stage 8-9 complete.
+
+======================================================================
+  STAGE 10/10: TRUE HOLDOUT EVALUATION (2026)
+======================================================================
+  [21:43:09]
+  Building train matchups (2011-2025)...
+    Train [1/14] 2011: 64 teams -> 1365 pairs so far
+    Train [2/14] 2012: 64 teams -> 2730 pairs so far
+    Train [3/14] 2013: 64 teams -> 4095 pairs so far
+    Train [4/14] 2014: 64 teams -> 5460 pairs so far
+    Train [5/14] 2015: 64 teams -> 6825 pairs so far
+    Train [6/14] 2016: 64 teams -> 8190 pairs so far
+    Train [7/14] 2017: 64 teams -> 9555 pairs so far
+    Train [8/14] 2018: 64 teams -> 10920 pairs so far
+    Train [9/14] 2019: 64 teams -> 12285 pairs so far
+    Train [10/14] 2021: 64 teams -> 13641 pairs so far
+    Train [11/14] 2022: 64 teams -> 15006 pairs so far
+    Train [12/14] 2023: 64 teams -> 16371 pairs so far
+    Train [13/14] 2024: 64 teams -> 17736 pairs so far
+    Train [14/14] 2025: 64 teams -> 19101 pairs so far
+  Train: 38202 samples (19101 unique pairs)
+  Building test matchups (2026)...
+    Test [1/1] 2026: 68 teams -> 1547 pairs so far
+  Test: 3094 samples (1547 unique pairs)
+
+  SEED-ONLY BASELINE (2026): 85.0%
+
+  Model                  CV AUC  Test AUC  Test Acc    Brier   LogLoss
+  -------------------------------------------------------------------
+  Random Forest          0.9017    0.9116    0.8397   0.1181    0.3808
+  XGBoost                0.9170    0.8911    0.8138   0.1382    0.4855
+  LightGBM               0.9164    0.8896    0.8080   0.1433    0.5391
+  CatBoost               0.9164    0.8949    0.8219   0.1314    0.4392
+  Stacking Ensemble          --    0.8816    0.8132   0.1396    0.4462
+
+  Best model: Random Forest (Test AUC = 0.9116)
+  Unique 2026 matchup pairs: 1547
+  Correctly predicted: 1299 (84.0%)
+  Chalk accuracy:  96.0% (1263/1315)
+  Upset accuracy:  15.5% (36/232)
+  Seed-only baseline: 85.0%
+  Model improvement over seed baseline: -1.0%
+
+  Key 2026 matchup predictions:
+  Team A                 Team B                 Actual        Predicted   Prob A  Correct
+  -------------------------------------------------------------------------------------
+  Michigan               Connecticut            Michigan       Michigan    83.0%      YES
+  Arizona                Michigan               Michigan       Michigan    48.8%      YES
+  Illinois               Connecticut            Connecticut    Illinois    64.1%    NO <<
+  Iowa                   Illinois               Illinois       Illinois    20.3%      YES
+  Duke                   Connecticut            Connecticut        Duke    87.6%    NO <<
+  Florida                Iowa                   Iowa            Florida    85.9%    NO <<
+  Wisconsin              High Point             High Point    Wisconsin    90.3%    NO <<
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage10_eval_2026.png
+    >> [saved] C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/stage10_confusion_matrix.png
+    >> [saved] holdout_results.csv
+    >> Stage 10 complete.
+
+======================================================================
+  PIPELINE COMPLETE at 21:47:54
+  Report:  C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs\pipeline_report.txt
+  Outputs: C:\Users\EK\OneDrive\Desktop\Data Mining Project (2)\Data Mining Project\Kaggle\updated\outputs/
+======================================================================
+    >> [saved] mm2026_processed.csv
