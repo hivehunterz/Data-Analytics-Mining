@@ -1,0 +1,756 @@
+ <!doctype html><html lang="en"><head > <meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-3e4e9a71de756f70db6",applicationID:"820796320",browserID:"1120004188"};;/*! For license information please see nr-loader-rum-1.313.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={163:(e,t,r)=>{"use strict";r.d(t,{j:()=>T});var n=r(384),i=r(1741);var s=r(2555);r(860).K7.genericEvents;const o="experimental.resources",a="register",c=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var u=r(2614),d=r(944),l=r(8122);const f="[data-nr-mask]",g=e=>(0,l.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{register:{get enabled(){return e.feature_flags.includes(a)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(o)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:u.wk,inactiveMs:u.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){c(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,d.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){c(t)?e.block_selector+=",".concat(t):""!==t&&(0,d.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,d.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var p=r(6154),m=r(9324);let h=0;const v={buildEnv:m.F3,distMethod:m.Xs,version:m.xv,originTime:p.WN},b={consented:!1},y={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||b.consented},set consented(e){b.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++h}},_=e=>{const t=(0,l.a)(e,y),r=Object.keys(v).reduce((e,t)=>(e[t]={value:v[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)},w=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};var x=r(7836),R=r(3241);const k={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},A=e=>(0,l.a)(e,k);function T(e,t={},r,o){let{init:a,info:c,loader_config:u,runtime:d={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();a=e.init,c=e.info,u=e.loader_config}e.init=g(a||{}),e.loader_config=A(u||{}),c.jsAttributes??={},p.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,s.D)(c);const f=e.init;e.runtime??=_(d),f.proxy.assets&&w(f.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach(r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let s=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return s?s(...t):n})})}(e),e.runtime.loaderType=r,e.ee=x.ee.get(e.agentIdentifier),e.exposed=l,(0,R.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.runtime.configured=!0)}},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>d,K7:()=>c,P3:()=>u,XX:()=>i,Yy:()=>a,df:()=>s,qY:()=>n,v4:()=>o});const n="events",i="jserrors",s="browser/blobs",o="rum",a="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},u={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.softNav]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.sessionReplay]:8,[c.logging]:9,[c.genericEvents]:10},d={[c.pageViewEvent]:o,[c.pageViewTiming]:n,[c.ajax]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:s,[c.sessionReplay]:s,[c.logging]:a,[c.genericEvents]:"ins"}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>a,Ze:()=>u,x3:()=>c});var n=r(3241),i=r(3606),s=r(860),o=r(2646);function a(e,t){if(!e)return;const r={staged:!1,priority:s.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const s=e.ee,a=i.i.handlers;if(s&&!s.aborted&&s.backlog&&a){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=s.backlog[t],r=a[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof o.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}s.isolatedBacklog||delete a[t],s.backlog[t]=null,s.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},1738:(e,t,r)=>{"use strict";r.d(t,{U:()=>f,Y:()=>l});var n=r(3241),i=r(9908),s=r(1863),o=r(944),a=r(3969),c=r(8362),u=r(860),d=r(4261);function l(e,t,r,s){const l=s||r;!l||l[e]&&l[e]!==c.d.prototype[e]||(l[e]=function(){(0,i.p)(a.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:d.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,o.R)(23,e)}})}function f(e,t,r,n,o){const a=e.info;null===r?delete a.jsAttributes[t]:a.jsAttributes[t]=r,(o||null===r)&&(0,i.p)(d.Pl+n,[(0,s.t)(),t,r],void 0,"session",e.ee)}},1741:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(4261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},1910:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>a,f:()=>o});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function o(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const a=e=>(0,i.a)(e,s)},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>o,H3:()=>n,g:()=>u,iL:()=>c,tS:()=>a,uh:()=>i,wk:()=>s});const n="NRBA",i="SESSION",s=144e5,o=18e5,a={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},u={OFF:0,FULL:1,ERROR:2}},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},2843:(e,t,r)=>{"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(6154);const i="newrelic";function s(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(9908);s.on=o;var i=s.handlers={};function s(e,t,r,s){o(s||n.d,i,e,t,r)}function o(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var o=t[s]=t[s]||{};(o[r]=o[r]||[]).push([e,i])}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>a,rs:()=>i,xV:()=>o,z_:()=>s});const n=r(860).K7.metrics,i="sm",s="cm",o="storeSupportabilityMetrics",a="storeEventMetrics"},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>i});var n=r(1687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},4261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>u,BL:()=>a,CH:()=>g,Dl:()=>_,Fw:()=>y,PA:()=>h,Pl:()=>n,Pv:()=>k,Tb:()=>l,U2:()=>s,V1:()=>R,Wb:()=>x,bt:()=>b,cD:()=>v,d3:()=>w,dT:()=>c,eY:()=>p,fF:()=>f,hG:()=>i,k6:()=>o,nb:()=>m,o5:()=>d});const n="api-",i="addPageAction",s="addToTrace",o="addRelease",a="finished",c="interaction",u="log",d="noticeError",l="pauseReplay",f="recordCustomEvent",g="recordReplay",p="register",m="setApplicationVersion",h="setCurrentRouteName",v="setCustomAttribute",b="setErrorHandler",y="setPageViewName",_="setUserId",w="start",x="wrapLogger",R="measure",k="consent"},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>o,Qr:()=>c,sB:()=>a});var n=r(3878),i=r(6389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(s())return e();const r=(0,i.J)(e),o=setInterval(()=>{s()&&(clearInterval(o),r())},500);(0,n.sp)("load",r,t)}function a(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>u,RI:()=>i,WN:()=>l,bv:()=>s,gm:()=>o,m:()=>c,mw:()=>a,sb:()=>d,zk:()=>f});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean("hidden"===o?.document?.visibilityState),c=""+o?.location,u=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)()),f=()=>{const e=o?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<o.performance.now())return e}},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},7699:(e,t,r)=>{"use strict";r.d(t,{It:()=>s,KC:()=>a,No:()=>i,qh:()=>o});var n=r(860);const i=16e3,s=1e6,o="SESSION_ERROR",a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0}},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>a,ee:()=>c});var n=r(384),i=r(8990),s=r(2646),o=r(5607);const a="nr@context:".concat(o.W),c=function e(t,r){var n={},o={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var a=g(n);m(e).forEach(e=>{e.apply(a,r)});var u=v()[o[e]];u&&u.push([f,e,r,a]);return a},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{o[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[o[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,a,()=>new s.y(a)):new s.y(a)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c)},8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:"object"==typeof e[o]&&"object"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},8362:(e,t,r)=>{"use strict";r.d(t,{d:()=>s});var n=r(9566),i=r(1741);class s extends i.W{agentIdentifier=(0,n.LA)(16)}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},9324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>s,xv:()=>n});const n="1.313.0",i="PROD",s="CDN"},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>a,bz:()=>o});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function s(e,t){return e?15&e[t]:16*Math.random()|0}function o(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?s(t,r++).toString(16):"y"===e?(3&s()|8).toString(16):e).join("")}function a(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const o=[];for(var a=0;a<e;a++)o.push(s(r,i++).toString(16));return o.join("")}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var s=n[e]={exports:{}};return r[e](s,s.exports,i),s.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>"nr-rum-1.313.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.313.0.PROD:",i.l=(r,n,s,o)=>{if(e[r])e[r].push(n);else{var a,c;if(void 0!==s)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+s){a=l;break}}if(!a){c=!0;var f={296:"sha512-M4vcm+1hbuM8TKokw3ww6HJNfMMjqi2Ab5vspeQAK3R1w9GkjH//ja9eMid+ae4DzJhllcUTwKdmQg3f8AYrUw=="};(a=document.createElement("script")).charset="utf-8",i.nc&&a.setAttribute("nonce",i.nc),a.setAttribute("data-webpack",t+s),a.src=r,0!==a.src.indexOf(window.location.origin+"/")&&(a.crossOrigin="anonymous"),f[o]&&(a.integrity=f[o])}e[r]=[n];var g=(t,n)=>{a.onerror=a.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],a.parentNode&&a.parentNode.removeChild(a),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=g.bind(null,a.onerror),a.onload=g.bind(null,a.onload),c&&document.head.appendChild(a)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={374:0,840:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var s=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=s);var o=i.p+i.u(t),a=new Error;i.l(o,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var s=r&&("load"===r.type?"missing":r.type),o=r&&r.target&&r.target.src;a.message="Loading chunk "+t+" failed: ("+s+": "+o+")",a.name="ChunkLoadError",a.type=s,a.request=o,n[1](a)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,s,[o,a,c]=r,u=0;if(o.some(t=>0!==e[t])){for(n in a)i.o(a,n)&&(i.m[n]=a[n]);if(c)c(i)}for(t&&t(r);u<o.length;u++)s=o[u],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0},r=self["webpackChunk:NRBA-1.313.0.PROD"]=self["webpackChunk:NRBA-1.313.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(8362),t=i(860);const r=Object.values(t.K7);var n=i(163);var s=i(9908),o=i(1863),a=i(4261),c=i(1738);var u=i(1687),d=i(4234),l=i(5289),f=i(6154),g=i(944),p=i(384);const m=e=>f.RI&&!0===e?.privacy.cookies_enabled;function h(e){return!!(0,p.dV)().o.MO&&m(e)&&!0===e?.session_trace.enabled}var v=i(6389),b=i(7699);class y extends d.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,v.J)(()=>{(0,u.Ak)(e,this.featureName),t()}))}):(0,u.Ak)(e,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{let n;await this.deferred;try{if(m(e.init)){const{setupAgentSession:t}=await i.e(296).then(i.bind(i,2612));n=t(e)}}catch(e){(0,g.R)(20,e),this.ee.emit("internal-error",[e]),(0,s.p)(b.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#t(this.featureName,n,e.init))return(0,u.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,g.R)(34,e),this.abortHandler?.(),(0,u.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};f.RI?(0,l.GG)(()=>n(),!0):n()}#t(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return h(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}}var _=i(6630),w=i(2614),x=i(3241);class R extends y{static featureName=_.T;constructor(e){var t;super(e,_.T),this.setupInspectionEvents(),t=e,(0,c.Y)(a.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,s.p)(a.Pl+a.Fw,[(0,o.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(296).then(i.bind(i,146)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,l.sB)(t=>{e(t,"DOMContentLoaded")}),(0,l.GG)(t=>{e(t,"load")}),(0,l.Qr)(t=>{e(t,"navigate")}),this.ee.on(w.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class k extends e.d{constructor(e){var t;(super(),f.gm)?(this.features={},(0,p.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(R),(0,n.j)(this,e,e.loaderType||"agent"),t=this,(0,c.Y)(a.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,c.U)(t,e,r,a.cD,n);(0,g.R)(40,typeof r)}else(0,g.R)(39,typeof e)},t),function(e){(0,c.Y)(a.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,g.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,s.p)(a.Pl+"setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,c.U)(e,"enduser.id",t,a.Dl,!0)},e)}(this),function(e){(0,c.Y)(a.nb,function(t){if("string"==typeof t||null===t)return(0,c.U)(e,"application.version",t,a.nb,!1);(0,g.R)(42,typeof t)},e)}(this),function(e){(0,c.Y)(a.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,c.Y)(a.Pv,function(t=!0){if("boolean"==typeof t){if((0,s.p)(a.Pl+a.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,g.R)(65,typeof t)},e)}(this),this.run()):(0,g.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return r.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),n=[...this.desiredFeatures];n.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),n.forEach(r=>{if(!e[r.featureName]&&r.featureName!==t.K7.pageViewEvent)return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,g.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,g.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,p.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var A=i(2843),T=i(782);class E extends y{static featureName=T.T;constructor(e){super(e,T.T),f.RI&&((0,A.u)(()=>(0,s.p)("docHidden",[(0,o.t)()],void 0,T.T,this.ee),!0),(0,A.G)(()=>(0,s.p)("winPagehide",[(0,o.t)()],void 0,T.T,this.ee)),this.importAggregator(e,()=>i.e(296).then(i.bind(i,2117))))}}var S=i(3969);class j extends y{static featureName=S.TZ;constructor(e){super(e,S.TZ),this.importAggregator(e,()=>i.e(296).then(i.bind(i,9623)))}}new k({features:[R,E,j],loaderType:"lite"})})()})();</script>
+<meta name="title" content="The Coffee Bean &amp; Tea Leaf® - Singapore"/>
+<meta name="keywords" content="Magento, Varien, E-commerce"/>
+<meta name="robots" content="INDEX,FOLLOW"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<title>The Coffee Bean &amp; Tea Leaf® - Singapore</title>
+<link  rel="stylesheet" type="text/css"  media="all" href="https://www.coffeebean.com.sg/static/version1775620110/_cache/merged/36657889d7888b5f0d41a41583b3212a.min.css" />
+<link  rel="stylesheet" type="text/css"  media="screen and (min-width: 768px)" href="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/css/styles-l.min.css" />
+<link  rel="stylesheet" type="text/css"  media="print" href="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/css/print.min.css" />
+
+
+
+
+
+
+<link  rel="icon" type="image/x-icon" href="https://www.coffeebean.com.sg/media/favicon/stores/1/favicon.png" />
+<link  rel="shortcut icon" type="image/x-icon" href="https://www.coffeebean.com.sg/media/favicon/stores/1/favicon.png" />
+<!--0AM6IY58CAt88XXx54aUrC6Hg5JipW4y-->
+<meta name="p:domain_verify" content="A0uX9l3AjTBvlodZp2dq4NHaffUv8HH2"/>     <!-- GOOGLE TAG MANAGER --><!-- END GOOGLE TAG MANAGER --></head><body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/images/loader-2.gif"}}' id="html-body" class="cms-home cms-index-index page-layout-1column">              <div class="cookie-status-message" id="cookie-status">The store will not work correctly when cookies are disabled.</div>     <noscript><div class="message global noscript"><div class="content"><p><strong>JavaScript seems to be disabled in your browser.</strong> <span> For the best experience on our site, be sure to turn on Javascript in your browser.</span></p></div></div></noscript>      <!-- GOOGLE TAG MANAGER --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WGKRF8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- END GOOGLE TAG MANAGER -->  <div class="page-wrapper"><header class="page-header"><div class="panel wrapper"><div class="top-bar"><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="682A874CF130E"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="682A874CF131B" data-decoded="true"><div class="top-header-bar">
+    <span>Welcome to CoffeeBeanSG!</a></span>
+</div></div><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="682A874CF1323" data-decoded="true"><style>
+.top-header-bar .hotline {
+    display: none; /* Hide the hotline div and its contents */
+}
+
+@media screen and (min-width: 768px) {
+.page-header .top-header-bar {margin-left: 0}
+}
+
+</style>
+</div></div></div><style>#html-body [data-pb-style="682A874CF130E"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}#html-body [data-pb-style="682A874CF131B"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}#html-body [data-pb-style="682A874CF1323"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}</style></div><div class="panel header"> <span data-action="toggle-nav" class="action nav-toggle"><span>Toggle Nav</span></span> <a class="logo" href="https://www.coffeebean.com.sg/" title="" aria-label="store logo"><img src="https://www.coffeebean.com.sg/media/logo/stores/1/Untitled-1-01.png" title="" alt="" /></a> <a class="action skip contentarea" href="#contentarea"><span> Skip to Content</span></a>    <div data-block="minicart" class="minicart-wrapper"><a class="action showcart" href="https://www.coffeebean.com.sg/checkout/cart/" data-bind="scope: 'minicart_content'"><span class="text">Cart</span> <span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false && !isLoading() }, blockLoader: isLoading"><!-- ko if: getCartParam('summary_count') --><span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span> <!-- /ko --><span class="counter-label"><!-- ko if: getCartParam('summary_count') --><!-- ko text: getCartParam('summary_count') --><!-- /ko --><!-- ko i18n: 'items' --><!-- /ko --><!-- /ko --></span></span></a>  <div class="block block-minicart" data-role="dropdownDialog" data-mage-init='{"dropdownDialog":{ "appendTo":"[data-block=minicart]", "triggerTarget":".showcart", "timeout": "2000", "closeOnMouseLeave": false, "closeOnEscape": true, "triggerClass":"active", "parentClass":"active", "buttons":[]}}'><div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'"><!-- ko template: getTemplate() --><!-- /ko --></div></div>  </div><ul class="header links">  <li class="greet welcome" data-bind="scope: 'customer'"><!-- ko if: customer().fullname --><a href="https://www.coffeebean.com.sg/customer/account/"><span class="logged-in" data-bind="text: new String('Hi! %1').replace('%1', customer().firstname)"></span></a> <!-- /ko --><!-- ko ifnot: customer().fullname --><span style="display: none;" class="not-logged-in" data-bind='html:"Default welcome msg!"'></span>  <!-- /ko --></li>   <li class="link authorization-link login" data-label="or"><a href="https://www.coffeebean.com.sg/customer/account/login/referer/aHR0cHM6Ly93d3cuY29mZmVlYmVhbi5jb20uc2cv/" >Login</a> <span class="separate">/</span></li><li><a href="https://www.coffeebean.com.sg/customer/account/create/" id="idZknaICTW" >Sign up</a></li></ul></div></div><div class="header content">   <div class="block block-search"><div class="block block-title"><strong>Search</strong></div><div class="block block-content"><form class="form minisearch" id="search_mini_form" action="https://www.coffeebean.com.sg/catalogsearch/result/" method="get"><div class="field search"><label class="label" for="search" data-role="minisearch-label"><span>Search</span></label> <div class="control"><input id="search"  data-mage-init='{"quickSearch":{ "formSelector":"#search_mini_form", "url":"https://www.coffeebean.com.sg/search/ajax/suggest/", "destinationSelector":"#search_autocomplete", "minSearchLength":"3"} }'  type="text" name="q" value="" placeholder="Search&#x20;entire&#x20;store&#x20;here..." class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" aria-expanded="false"/><div id="search_autocomplete" class="search-autocomplete"></div> <div data-bind="scope: 'searchsuiteautocomplete_form'"><!-- ko template: getTemplate() --><!-- /ko --></div></div></div><div class="actions"><button type="submit" title="Search" class="action search" aria-label="Search" ><span>Search</span></button></div></form></div></div></div>  <div class="sections nav-sections"> <div class="section-items nav-sections-items" data-mage-init='{"tabs":{"openedState":"active"}}'>  <div class="section-item-title nav-sections-item-title" data-role="collapsible"><a class="nav-sections-item-switch" data-toggle="switch" href="#store.menu">Menu</a></div><div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content">     <nav class="navigation" role="navigation" ><div class="menu" id="om"><ul><li><a href="https://www.coffeebean.com.sg/order-online.html"  class="level-top" ><span>Shop Now</span></a><ul><div class="topstatic" ><style>#html-body [data-pb-style=GN67PUO],#html-body [data-pb-style=PLVP7KB]{background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=GN67PUO]{justify-content:flex-start;display:flex;flex-direction:column;border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=PLVP7KB]{align-self:stretch}#html-body [data-pb-style=VX0NYDW]{display:flex;width:100%}#html-body [data-pb-style=AGS83T3],#html-body [data-pb-style=CKM5N6E],#html-body [data-pb-style=OILIHU3],#html-body [data-pb-style=QG9J2XR],#html-body [data-pb-style=R10JS77]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;width:20%;margin:0;padding:0;align-self:stretch}#html-body [data-pb-style=EUWJK91],#html-body [data-pb-style=JN4PDV7],#html-body [data-pb-style=K25A7V4],#html-body [data-pb-style=TJWBE2D],#html-body [data-pb-style=UCAMBU8]{border-style:none;border-width:1px;border-radius:0;margin:0 10px 0 0;padding:0 14px}#html-body [data-pb-style=ASHFADD]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=FAOTDUT],#html-body [data-pb-style=GX20RGB]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=DIARRVM]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=GJXAYBY],#html-body [data-pb-style=NPNA7LQ]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=RNFVKGO]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=S6IGV9T],#html-body [data-pb-style=XKF5O61]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=X9U3IIO]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=A6QA2MV],#html-body [data-pb-style=BMN6J17]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=OKIKNKP]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=M3CJ5D5],#html-body [data-pb-style=OT4E6A1]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}@media only screen and (max-width: 768px) { #html-body [data-pb-style=ASHFADD],#html-body [data-pb-style=DIARRVM],#html-body [data-pb-style=OKIKNKP],#html-body [data-pb-style=RNFVKGO],#html-body [data-pb-style=X9U3IIO]{border-style:none} }</style><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="GN67PUO"><div class="pagebuilder-column-group" data-background-images="{}" data-content-type="column-group" data-appearance="default" data-grid-size="12" data-element="main" data-pb-style="PLVP7KB"><div class="pagebuilder-column-line" data-content-type="column-line" data-element="main" data-pb-style="VX0NYDW"><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="R10JS77"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="ASHFADD"><a href="https://coffeebean.com.sg/order-online/coffee.html" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/260x160px_-_Shop_Now_1_R2.jpg" alt="" title="" data-element="desktop_image" data-pb-style="FAOTDUT"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/260x160px_-_Shop_Now_1_R2_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="GX20RGB"></a></figure><div class="menu-sub-name" data-content-type="text" data-appearance="default" data-element="main" data-pb-style="UCAMBU8"><p id="X8C7V1K"><a tabindex="0" href="https://coffeebean.com.sg/order-online/coffee.html">Coffee</a></p></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="CKM5N6E"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="DIARRVM"><a href="https://coffeebean.com.sg/order-online/tea.html" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/OnlineStore_0004_Retail_Tea_2.jpg" alt="" title="" data-element="desktop_image" data-pb-style="NPNA7LQ"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/OnlineStore_0004_Retail_Tea_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="GJXAYBY"></a></figure><div class="menu-sub-name" data-content-type="text" data-appearance="default" data-element="main" data-pb-style="EUWJK91"><p><a tabindex="0" href="https://coffeebean.com.sg/order-online/tea.html">Tea</a></p></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="OILIHU3"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="RNFVKGO"><a href="https://coffeebean.com.sg/order-online/essentials.html" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/260x160px_-_Elemental_Patterned_Bottle_2.jpg" alt="" title="" data-element="desktop_image" data-pb-style="S6IGV9T"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/260x160px_-_Elemental_Patterned_Bottle_3.jpg" alt="" title="" data-element="mobile_image" data-pb-style="XKF5O61"></a></figure><div class="menu-sub-name" data-content-type="text" data-appearance="default" data-element="main" data-pb-style="JN4PDV7"><p><a tabindex="0" href="https://coffeebean.com.sg/order-online/essentials.html">merchandise</a></p></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="AGS83T3"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="X9U3IIO"><a href="https://coffeebean.com.sg/order-online/cakes.html" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/260x160px_-_Rainbow_cake.jpg" alt="" title="" data-element="desktop_image" data-pb-style="A6QA2MV"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/OnlineStore_0001_Whole_Cakes_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="BMN6J17"></a></figure><div class="menu-sub-name" data-content-type="text" data-appearance="default" data-element="main" data-pb-style="K25A7V4"><p><a tabindex="0" href="https://coffeebean.com.sg/order-online/cakes.html">whole cakes &amp; party packs</a></p></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="QG9J2XR"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="OKIKNKP"><a href="https://coffeebean.com.sg/checkout/cart" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/Testr.jpg" alt="" title="" data-element="desktop_image" data-pb-style="M3CJ5D5"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/Testr_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="OT4E6A1"></a></figure><div class="menu-sub-name" data-content-type="text" data-appearance="default" data-element="main" data-pb-style="TJWBE2D"><p><a tabindex="0" href="https://coffeebean.com.sg/checkout/cart">shopping cart</a></p></div></div></div></div></div></div></div><li  class="level1 nav-1-1 first menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/coffee.html" ><span>Coffee</span></a><ul class="level1 submenu"><li  class="level2 nav-1-1-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/coffee/light-subtle.html" ><span>Light Roast</span></a></li><li  class="level2 nav-1-1-2 menu_a"><a href="https://www.coffeebean.com.sg/order-online/coffee/medium-and-smooth.html" ><span>Medium Roast</span></a></li><li  class="level2 nav-1-1-3 menu_a"><a href="https://www.coffeebean.com.sg/order-online/coffee/dark-and-distinctive.html" ><span>Dark Roast</span></a></li><li  class="level2 nav-1-1-4 menu_a last"><a href="https://www.coffeebean.com.sg/order-online/coffee/nespressor-compatible-capsules.html" ><span>Nespresso® Compatible Capsules</span></a></li></ul></li><li  class="level1 nav-1-2 menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/tea.html" ><span>Tea</span></a><ul class="level1 submenu"><li  class="level2 nav-1-2-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/tea/green-tea.html" ><span>Green Tea</span></a></li><li  class="level2 nav-1-2-2 menu_a"><a href="https://www.coffeebean.com.sg/order-online/tea/black-tea.html" ><span>Black Tea</span></a></li><li  class="level2 nav-1-2-3 menu_a"><a href="https://www.coffeebean.com.sg/order-online/tea/flavored-tea.html" ><span>Flavored</span></a></li><li  class="level2 nav-1-2-4 menu_a last"><a href="https://www.coffeebean.com.sg/order-online/tea/herbal-infusions.html" ><span>Herbal Infusions</span></a></li></ul></li><li  class="level1 nav-1-3 menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/essentials.html" ><span>Merchandise</span></a><ul class="level1 submenu"><li  class="level2 nav-1-3-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/essentials/drinkware.html" ><span>Drinkware</span></a></li><li  class="level2 nav-1-3-2 last"><a href="https://www.coffeebean.com.sg/order-online/essentials/lifestyle.html" ><span>Lifestyle Items</span></a></li></ul></li><li  class="level1 nav-1-4 menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/cakes.html" ><span>Whole Cakes And Party Packs</span></a><ul class="level1 submenu"><li  class="level2 nav-1-4-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/featured-cakes.html" ><span>Featured Cakes</span></a></li><li  class="level2 nav-1-4-2 menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/cheesecake-special.html" ><span>Our Original Cheesecakes</span></a></li><li  class="level2 nav-1-4-3 menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/signature-classics.html" ><span>Signature Classics</span></a></li><li  class="level2 nav-1-4-4 menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/party-packs.html" ><span>Party Packs</span></a></li><li  class="level2 nav-1-4-5 menu_a last"><a href="https://www.coffeebean.com.sg/order-online/cakes/java-to-go-cold-brew.html" ><span>Java-to-Go </span></a></li></ul></li><li  class="level1 nav-1-5 menu_a last column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/powder.html" ><span>Powder</span></a></li><div class="bottomstatic" ></div></ul></li><li><a href="/amlocator"  class="level-top" ><span>OUR LOCATIONS</span></a></li><li><a href="https://www.coffeebean.com.sg/coffee-bean-card-7.html"  class="level-top" ><span>CoffeeBean SG Rewards E-card</span></a><ul><li  class="level1 nav-3-1 first menu_a last parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/coffee-bean-card-7/the-coffee-bean-card.html" ><span>CoffeeBean SG Rewards E-card</span></a><ul class="level1 submenu"><li  class="level2 nav-3-1-1 first menu_a"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/register-my-e-card/id/90/" ><span>Register My E-Card</span></a></li><li  class="level2 nav-3-1-2 menu_a"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/top-up-my-e-card/id/94/" ><span>Top Up My E-Card</span></a></li><li  class="level2 nav-3-1-3 menu_a last"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/manage-my-e-card/id/92/" ><span>Manage My E-Card</span></a></li></ul></li><div class="bottomstatic" ></div></ul></li><li><a href="https://www.coffeebean.com.sg/about-us.html"  class="level-top" ><span>About Us</span></a><ul><li  class="level1 nav-4-1 first column_mega_menu1"><a href="https://www.coffeebean.com.sg/about-us/career.html" ><span>Career</span></a></li><li  class="level1 nav-4-2 last column_mega_menu1"><a href="https://www.coffeebean.com.sg/about-us/contact-us.html" ><span>Contact Us</span></a></li><div class="bottomstatic" ></div></ul></li><li><a href="https://www.coffeebean.com.sg/contact-us.html"  class="level-top" ><span>Contact Us</span></a></li> </ul></div><ul id="dm" data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'><li  class="level0 nav-1 first level-top parent"><a href="https://www.coffeebean.com.sg/order-online.html"  class="level-top" ><span>Shop Now</span></a><ul class="level0 submenu"><li  class="level1 nav-1-1 first menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/coffee.html" ><span>Coffee</span></a><ul class="level1 submenu"><li  class="level2 nav-1-1-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/coffee/light-subtle.html" ><span>Light Roast</span></a></li><li  class="level2 nav-1-1-2 menu_a"><a href="https://www.coffeebean.com.sg/order-online/coffee/medium-and-smooth.html" ><span>Medium Roast</span></a></li><li  class="level2 nav-1-1-3 menu_a"><a href="https://www.coffeebean.com.sg/order-online/coffee/dark-and-distinctive.html" ><span>Dark Roast</span></a></li><li  class="level2 nav-1-1-4 menu_a last"><a href="https://www.coffeebean.com.sg/order-online/coffee/nespressor-compatible-capsules.html" ><span>Nespresso® Compatible Capsules</span></a></li></ul></li><li  class="level1 nav-1-2 menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/tea.html" ><span>Tea</span></a><ul class="level1 submenu"><li  class="level2 nav-1-2-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/tea/green-tea.html" ><span>Green Tea</span></a></li><li  class="level2 nav-1-2-2 menu_a"><a href="https://www.coffeebean.com.sg/order-online/tea/black-tea.html" ><span>Black Tea</span></a></li><li  class="level2 nav-1-2-3 menu_a"><a href="https://www.coffeebean.com.sg/order-online/tea/flavored-tea.html" ><span>Flavored</span></a></li><li  class="level2 nav-1-2-4 menu_a last"><a href="https://www.coffeebean.com.sg/order-online/tea/herbal-infusions.html" ><span>Herbal Infusions</span></a></li></ul></li><li  class="level1 nav-1-3 menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/essentials.html" ><span>Merchandise</span></a><ul class="level1 submenu"><li  class="level2 nav-1-3-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/essentials/drinkware.html" ><span>Drinkware</span></a></li><li  class="level2 nav-1-3-2 last"><a href="https://www.coffeebean.com.sg/order-online/essentials/lifestyle.html" ><span>Lifestyle Items</span></a></li></ul></li><li  class="level1 nav-1-4 menu_a parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/cakes.html" ><span>Whole Cakes And Party Packs</span></a><ul class="level1 submenu"><li  class="level2 nav-1-4-1 first menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/featured-cakes.html" ><span>Featured Cakes</span></a></li><li  class="level2 nav-1-4-2 menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/cheesecake-special.html" ><span>Our Original Cheesecakes</span></a></li><li  class="level2 nav-1-4-3 menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/signature-classics.html" ><span>Signature Classics</span></a></li><li  class="level2 nav-1-4-4 menu_a"><a href="https://www.coffeebean.com.sg/order-online/cakes/party-packs.html" ><span>Party Packs</span></a></li><li  class="level2 nav-1-4-5 menu_a last"><a href="https://www.coffeebean.com.sg/order-online/cakes/java-to-go-cold-brew.html" ><span>Java-to-Go </span></a></li></ul></li><li  class="level1 nav-1-5 menu_a last column_mega_menu1"><a href="https://www.coffeebean.com.sg/order-online/powder.html" ><span>Powder</span></a></li></ul></li><li  class="level0 nav-2 level-top"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/our-locations/id/49/"  class="level-top" ><span>OUR LOCATIONS</span></a></li><li  class="level0 nav-3 level-top parent"><a href="https://www.coffeebean.com.sg/coffee-bean-card-7.html"  class="level-top" ><span>CoffeeBean SG Rewards E-card</span></a><ul class="level0 submenu"><li  class="level1 nav-3-1 first menu_a last parent column_mega_menu1"><a href="https://www.coffeebean.com.sg/coffee-bean-card-7/the-coffee-bean-card.html" ><span>CoffeeBean SG Rewards E-card</span></a><ul class="level1 submenu"><li  class="level2 nav-3-1-1 first menu_a"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/register-my-e-card/id/90/" ><span>Register My E-Card</span></a></li><li  class="level2 nav-3-1-2 menu_a"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/top-up-my-e-card/id/94/" ><span>Top Up My E-Card</span></a></li><li  class="level2 nav-3-1-3 menu_a last"><a href="https://www.coffeebean.com.sg/catalog/category/view/s/manage-my-e-card/id/92/" ><span>Manage My E-Card</span></a></li></ul></li></ul></li><li  class="level0 nav-4 level-top parent"><a href="https://www.coffeebean.com.sg/about-us.html"  class="level-top" ><span>About Us</span></a><ul class="level0 submenu"><li  class="level1 nav-4-1 first column_mega_menu1"><a href="https://www.coffeebean.com.sg/about-us/career.html" ><span>Career</span></a></li><li  class="level1 nav-4-2 last column_mega_menu1"><a href="https://www.coffeebean.com.sg/about-us/contact-us.html" ><span>Contact Us</span></a></li></ul></li><li  class="level0 nav-5 last level-top"><a href="https://www.coffeebean.com.sg/contact-us.html"  class="level-top" ><span>Contact Us</span></a></li> </ul></nav></div>  <div class="section-item-title nav-sections-item-title" data-role="collapsible"><a class="nav-sections-item-switch" data-toggle="switch" href="#store.links">Account</a></div><div class="section-item-content nav-sections-item-content" id="store.links" data-role="content"><!-- Account links --></div> </div></div></header> <main id="maincontent" class="page-main"> <a id="contentarea" tabindex="-1"></a> <div class="page messages"> <div data-placeholder="messages"></div> <div data-bind="scope: 'messages'"><!-- ko if: cookieMessagesObservable() && cookieMessagesObservable().length > 0 --><div aria-atomic="true" role="alert" class="messages" data-bind="foreach: { data: cookieMessagesObservable(), as: 'message' }"><div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }"><div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div></div></div><!-- /ko --><div aria-atomic="true" role="alert" class="messages" data-bind="foreach: { data: messages().messages, as: 'message' }, afterRender: purgeMessages"><div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }"><div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div></div></div></div></div><div class="columns"><div class="column main">    <input name="form_key" type="hidden" value="hJFFg91w5QSqUkiW" /> <div id="authenticationPopup" data-bind="scope:'authenticationPopup', style: {display: 'none'}">  <!-- ko template: getTemplate() --><!-- /ko --> </div>           <div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="682A874D39426"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="682A874D39434" data-decoded="true"><style>
+.minicart-wrapper .action.showcart {font-weight: 400;}
+.block.newsletter .form.subscribe {display: block;}
+.block.newsletter .field.newsletter {display: table-cell; width: 90%;}
+.block.newsletter .form.subscribe .scg-msg {clear: both; float: left; width: 100%; display: block;}
+</style>
+<div class="homepage-content">
+<div class="main-banner"> <div class="widget block block-static-block"><style>#html-body [data-pb-style=LX0HDGN]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=IQ8WH75]{min-height:320px;border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=MD9ICOF]{background-position:left top;background-size:cover;background-repeat:no-repeat;min-height:320px}#html-body [data-pb-style=QSOBNPV]{min-height:320px;background-color:transparent}#html-body [data-pb-style=JA6LFQ5]{background-position:left top;background-size:cover;background-repeat:no-repeat;min-height:320px}#html-body [data-pb-style=TTTMYWS]{min-height:320px;background-color:transparent}#html-body [data-pb-style=H34HQQP]{background-position:left top;background-size:cover;background-repeat:no-repeat;min-height:320px}#html-body [data-pb-style=PTQ1RBT]{min-height:320px;background-color:transparent}#html-body [data-pb-style=DXDG1EI]{background-position:left top;background-size:cover;background-repeat:no-repeat;min-height:320px}#html-body [data-pb-style=EVJH5DQ]{min-height:320px;background-color:transparent}#html-body [data-pb-style=OKRUDQ0]{background-position:left top;background-size:cover;background-repeat:no-repeat;min-height:320px}#html-body [data-pb-style=BQI4X40]{min-height:320px;background-color:transparent}#html-body [data-pb-style=MKI0F3U]{background-position:left top;background-size:cover;background-repeat:no-repeat;min-height:320px}#html-body [data-pb-style=WOLHT0M]{min-height:320px;background-color:transparent}#html-body [data-pb-style=QNKUFGO]{margin:0}#html-body [data-pb-style=JS7HMKW]{background-position:left top;background-size:cover;background-repeat:no-repeat;border-style:none;border-width:1px;border-radius:0;text-align:center;min-height:320px}#html-body [data-pb-style=IUA97OT]{min-height:320px;padding:0;background-color:transparent}</style><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="LX0HDGN"><div class="pagebuilder-slider" data-content-type="slider" data-appearance="default" data-autoplay="true" data-autoplay-speed="4000" data-fade="false" data-infinite-loop="false" data-show-arrows="false" data-show-dots="true" data-element="main" data-pb-style="IQ8WH75"><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main"><a href="https://www.instagram.com/reel/DWlHXXYidK5/" target="" data-link-type="default" title="" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f89e19 background-image-69e2671f9a8ba" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_2880x1110_8.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_1590x1200_8.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="MD9ICOF"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" aria-label="" title="" data-element="overlay" data-pb-style="QSOBNPV"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f89e19 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_2880x1110_8.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f89e19 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_1590x1200_8.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f89e19 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_1590x1200_8.jpg);}}</style><style type="text/css">.background-image-69e2671f9a8ba {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_2880x1110_8.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9a8ba {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_1590x1200_8.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9a8ba {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website-Banner_1590x1200_8.jpg);}}</style></a></div><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main"><a href="https://www.coffeebean.com.sg/tea-filter-tumbler-with-stainless-steel-straw.html" target="" data-link-type="default" title="" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f89eaf background-image-69e2671f9a90c" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-2880x1200_1.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-1590x1200_1.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="JA6LFQ5"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" aria-label="" title="" data-element="overlay" data-pb-style="TTTMYWS"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f89eaf {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-2880x1200_1.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f89eaf {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-1590x1200_1.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f89eaf {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-1590x1200_1.jpg);}}</style><style type="text/css">.background-image-69e2671f9a90c {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-2880x1200_1.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9a90c {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-1590x1200_1.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9a90c {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Webbanner-1590x1200_1.jpg);}}</style></a></div><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main"><a href="https://www.instagram.com/reel/DV-plg5if8A/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" data-link-type="default" title="" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f89f0c background-image-69e2671f9a954" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_2880x1110px_Updated.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_1590x1200px_Updated.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="H34HQQP"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" aria-label="" title="" data-element="overlay" data-pb-style="PTQ1RBT"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f89f0c {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_2880x1110px_Updated.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f89f0c {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_1590x1200px_Updated.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f89f0c {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_1590x1200px_Updated.jpg);}}</style><style type="text/css">.background-image-69e2671f9a954 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_2880x1110px_Updated.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9a954 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_1590x1200px_Updated.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9a954 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_1590x1200px_Updated.jpg);}}</style></a></div><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main"><a href="https://www.instagram.com/reel/DWvaiX0jXh4/" target="_blank" data-link-type="default" title="" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f89f63 background-image-69e2671f9a995" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/2880x1110px_-_Website_Banner_Desktop.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/1590x1200px_-_Website_Banner_Mobile_4.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="DXDG1EI"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" aria-label="" title="" data-element="overlay" data-pb-style="EVJH5DQ"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f89f63 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/2880x1110px_-_Website_Banner_Desktop.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f89f63 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1590x1200px_-_Website_Banner_Mobile_4.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f89f63 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1590x1200px_-_Website_Banner_Mobile_4.jpg);}}</style><style type="text/css">.background-image-69e2671f9a995 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/2880x1110px_-_Website_Banner_Desktop.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9a995 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1590x1200px_-_Website_Banner_Mobile_4.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9a995 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1590x1200px_-_Website_Banner_Mobile_4.jpg);}}</style></a></div><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main"><a href="https://www.instagram.com/coffeebeansg/" target="" data-link-type="default" title="" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f89fbb background-image-69e2671f9a9d4" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/2880x1110px_-_1_for_1_Retail_Tea.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/1580x1200px_-_1_for_1_Retail_Tea.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="OKRUDQ0"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" aria-label="" title="" data-element="overlay" data-pb-style="BQI4X40"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f89fbb {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/2880x1110px_-_1_for_1_Retail_Tea.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f89fbb {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1580x1200px_-_1_for_1_Retail_Tea.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f89fbb {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1580x1200px_-_1_for_1_Retail_Tea.jpg);}}</style><style type="text/css">.background-image-69e2671f9a9d4 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/2880x1110px_-_1_for_1_Retail_Tea.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9a9d4 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1580x1200px_-_1_for_1_Retail_Tea.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9a9d4 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/1580x1200px_-_1_for_1_Retail_Tea.jpg);}}</style></a></div><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main"><a href="https://www.coffeebean.com.sg/wellness-blend.html" target="_blank" data-link-type="default" title="" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f8a012 background-image-69e2671f9aa13" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Desktop_-_Wellness_Blend_Intro.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Mobile_-_Wellness_Blend_Intro.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="MKI0F3U"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" aria-label="" title="" data-element="overlay" data-pb-style="WOLHT0M"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f8a012 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Desktop_-_Wellness_Blend_Intro.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f8a012 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Mobile_-_Wellness_Blend_Intro.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f8a012 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Mobile_-_Wellness_Blend_Intro.jpg);}}</style><style type="text/css">.background-image-69e2671f9aa13 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Desktop_-_Wellness_Blend_Intro.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9aa13 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Mobile_-_Wellness_Blend_Intro.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9aa13 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner_Mobile_-_Wellness_Blend_Intro.jpg);}}</style></a></div><div data-content-type="slide" data-slide-name="" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main" data-pb-style="QNKUFGO"><a href="https://www.coffeebean.com.sg/24-hour-stores" target="_blank" data-link-type="default" data-element="link"><div class="pagebuilder-slide-wrapper background-image-69e2671f8a069 background-image-69e2671f9aa4e" data-background-images='{\"desktop_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner-24h_Stores_2.jpg\",\"mobile_image\":\"https://www.coffeebean.com.sg/media/wysiwyg/Mobile-Website-13-Nov_24h_Stores.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="JS7HMKW"><div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" data-element="overlay" data-pb-style="IUA97OT"><div class="pagebuilder-poster-content"><div data-element="content"></div></div></div></div><style type="text/css">.background-image-69e2671f8a069 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner-24h_Stores_2.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f8a069 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Mobile-Website-13-Nov_24h_Stores.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f8a069 {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Mobile-Website-13-Nov_24h_Stores.jpg);}}</style><style type="text/css">.background-image-69e2671f9aa4e {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Website_Banner-24h_Stores_2.jpg);}@media only screen and (max-width: 767px) and (min-width: 375px) {.background-image-69e2671f9aa4e {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Mobile-Website-13-Nov_24h_Stores.jpg);}}@media only screen and (max-width: 640px) {.background-image-69e2671f9aa4e {background-image: url(https://www.coffeebean.com.sg/media/wysiwyg/Mobile-Website-13-Nov_24h_Stores.jpg);}}</style></a></div></div></div></div></div></div>
+<div class="shop-stack"> <div class="widget block block-static-block"><style>#html-body [data-pb-style=QCRYETI],#html-body [data-pb-style=RW9BGEM]{background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=RW9BGEM]{justify-content:flex-start;display:flex;flex-direction:column;border-style:none;border-width:1px;border-radius:0;margin:0 0 25px;padding:0}#html-body [data-pb-style=QCRYETI]{align-self:stretch}#html-body [data-pb-style=MRPL2L8]{display:flex;width:100%}#html-body [data-pb-style=AB17FTX]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;width:70%;margin:0;padding:0 12px 0 0;align-self:stretch}#html-body [data-pb-style=SDUALJV]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=G18ERLK],#html-body [data-pb-style=LP5T5K3]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=SLMDDV2],#html-body [data-pb-style=YX580FX]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=YX580FX]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:30%;padding:0 0 0 12px;align-self:stretch}#html-body [data-pb-style=N22H2VO]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=ED7R4RD],#html-body [data-pb-style=J4MA1MI]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=R4VALO2]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=HA6RNII],#html-body [data-pb-style=JL43JSJ]{background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=HA6RNII]{justify-content:flex-start;display:flex;flex-direction:column;border-style:none;border-width:1px;border-radius:0;margin:0 0 25px;padding:0}#html-body [data-pb-style=JL43JSJ]{align-self:stretch}#html-body [data-pb-style=OU982YD]{display:flex;width:100%}#html-body [data-pb-style=SHV25CA]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;width:40%;margin:0;padding:0 12px 0 0;align-self:stretch}#html-body [data-pb-style=QTHA5NW]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=D7I39D7],#html-body [data-pb-style=LGUKF98]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=S6CMOR8],#html-body [data-pb-style=UEQRKFB]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=UEQRKFB]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:60%;padding:0 0 0 12px;align-self:stretch}#html-body [data-pb-style=XUWREBT]{margin:0;padding:0;border-style:none}#html-body [data-pb-style=P4GVB2E],#html-body [data-pb-style=S4N1RSQ]{border-style:none;border-width:1px;border-radius:0;max-width:100%;height:auto}#html-body [data-pb-style=AL6TVAC]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}@media only screen and (max-width: 768px) { #html-body [data-pb-style=N22H2VO],#html-body [data-pb-style=QTHA5NW],#html-body [data-pb-style=SDUALJV],#html-body [data-pb-style=XUWREBT]{border-style:none} }</style><div data-content-type="row" data-appearance="contained" data-element="main"><div class="banner-left-right static-row-content" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="RW9BGEM"><div class="pagebuilder-column-group" data-background-images="{}" data-content-type="column-group" data-appearance="default" data-grid-size="12" data-element="main" data-pb-style="QCRYETI"><div class="pagebuilder-column-line" data-content-type="column-line" data-element="main" data-pb-style="MRPL2L8"><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="AB17FTX"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="SDUALJV"><a href="https://www.coffeebean.com.sg/order-online/cakes.html" target="_blank" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/940x400px_-_Feature_Rainbow_Cake.jpg" alt="" title="" data-element="desktop_image" data-pb-style="LP5T5K3"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/Unicorn_Cakes-Mobil.jpg" alt="" title="" data-element="mobile_image" data-pb-style="G18ERLK"></a></figure><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="SLMDDV2" data-decoded="true"><div class="description">
+    <h2 class="title">SHOP WHOLE CAKES</h2>
+    <p>Perfect for every occasion</p>
+</div></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="YX580FX"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="N22H2VO"><a href="https://www.coffeebean.com.sg/order-online/tea.html" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/448x400px_-_Tea_Tin_1.jpg" alt="" title="" data-element="desktop_image" data-pb-style="J4MA1MI"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/shop-tea-mb.jpg" alt="" title="" data-element="mobile_image" data-pb-style="ED7R4RD"></a></figure><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="R4VALO2" data-decoded="true"><div class="description">
+    <h2 class="title">SHOP tea</h2>
+    <p>Amazing Tea starts with carefully nurtured relationships around the world.</p>
+</div>
+
+</div></div></div></div></div></div><div data-content-type="row" data-appearance="contained" data-element="main"><div class="banner-right-left static-row-content" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="HA6RNII"><div class="pagebuilder-column-group" data-background-images="{}" data-content-type="column-group" data-appearance="default" data-grid-size="12" data-element="main" data-pb-style="JL43JSJ"><div class="pagebuilder-column-line" data-content-type="column-line" data-element="main" data-pb-style="OU982YD"><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="SHV25CA"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="QTHA5NW"><a href="https://www.coffeebean.com.sg/order-online/powder.html" target="_blank" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/21WIN_SocialMedia_Retail-1493.jpg" alt="" title="" data-element="desktop_image" data-pb-style="D7I39D7"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/21WIN_SocialMedia_Retail-1493_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="LGUKF98"></a></figure><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="S6CMOR8" data-decoded="true"><div class="description">
+    <h2 class="title" style="color:black;">Shop Powders</h2>
+    <p style="color:black;">Perfect for the baristas-at-home</p>
+</div></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="UEQRKFB"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="XUWREBT"><a href="https://www.coffeebean.com.sg/order-online/coffee.html" target="" data-link-type="default" title="" data-element="link"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/21WIN_SocialMedia_Retail-1217_1.png" alt="" title="" data-element="desktop_image" data-pb-style="S4N1RSQ"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/21WIN_SocialMedia_Retail-1217_1_1.png" alt="" title="" data-element="mobile_image" data-pb-style="P4GVB2E"></a></figure><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="AL6TVAC" data-decoded="true"><div class="description">
+    <h2>Shop Coffee</h2>
+    <p>Add a shot of positivity to your everyday</p>
+</div>
+</div></div></div></div></div></div></div></div>
+<div class="home-featured"> <div class="widget block block-static-block"><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="682A874CF2C1D"><h2 class="title-summary" data-content-type="heading" data-appearance="default" data-element="main" data-pb-style="682A874CF2C29">featured products</h2><div data-content-type="products" data-appearance="carousel" data-autoplay="false" data-autoplay-speed="4000" data-infinite-loop="true" data-show-arrows="true" data-show-dots="true" data-carousel-mode="default" data-center-padding="90px" data-element="main" data-pb-style="682A874CF2C32"> </div></div></div><style>#html-body [data-pb-style="682A874CF2C1D"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px 0px 10px; padding: 0px;}#html-body [data-pb-style="682A874CF2C29"]{border-style: none; border-width: 1px; border-radius: 0px;}#html-body [data-pb-style="682A874CF2C32"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}</style></div></div>
+<div class="home-new-stack test"> <div class="widget block block-static-block"><div data-content-type="row" data-appearance="contained" data-element="main"><div class="static-row-content banner-with-text banner-text-right" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="682A874CF25AD"><figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="682A874CF25B9"><img class="pagebuilder-mobile-hidden" src="https://www.coffeebean.com.sg/media/wysiwyg/new-stack1_1.png" alt="" title="" data-element="desktop_image" data-pb-style="682A874CF25C1"><img class="pagebuilder-mobile-only" src="https://www.coffeebean.com.sg/media/wysiwyg/new-stack1_1.png" alt="" title="" data-element="mobile_image" data-pb-style="682A874CF25C9"></figure><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="682A874CF25D0" data-decoded="true"><div class="description">
+    <h2 class="title">grounded in socal, steeped in culture.</h2>
+    <p>Awaken your everyday with The Coffee Bean & Tea Leaf®. Click to read about our adventures since 1963!</p>
+    <div class="cta-links">
+        <a href="https://www.coffeebean.com.sg/about-us">Learn more</a>
+    </div>
+</div></div></div></div><div data-content-type="row" data-appearance="contained" data-element="main"><div class="static-row-content banner-with-text banner-text-left" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="682A874CF25D8"></div></div><style>#html-body [data-pb-style="682A874CF25AD"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px 0px 25px; padding: 0px;}#html-body [data-pb-style="682A874CF25B9"]{margin: 0px; padding: 0px; border-style: none;}#html-body [data-pb-style="682A874CF25C1"]{border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;}#html-body [data-pb-style="682A874CF25C9"]{border-style: none; border-width: 1px; border-radius: 0px; max-width: 100%; height: auto;}#html-body [data-pb-style="682A874CF25D0"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}#html-body [data-pb-style="682A874CF25D8"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px 0px 25px; padding: 0px;}</style></div></div>
+<div class="press-room"> <div class="widget block block-static-block"></div></div>
+</div>
+</div></div></div><style>#html-body [data-pb-style="682A874D39426"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}#html-body [data-pb-style="682A874D39434"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}</style>    </div></div></main><footer class="page-footer"><div class="footer content"><style>#html-body [data-pb-style=AL4OWY3],#html-body [data-pb-style=LIY6AYK]{background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=LIY6AYK]{justify-content:flex-start;display:flex;flex-direction:column;border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=AL4OWY3]{align-self:stretch}#html-body [data-pb-style=RPGK78G]{display:flex;width:100%}#html-body [data-pb-style=J0SLCDN]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:33.3333%;margin:0;padding:10px;align-self:stretch}#html-body [data-pb-style=AFQJEY1],#html-body [data-pb-style=I3E10DA],#html-body [data-pb-style=J0SLCDN]{border-style:none;border-width:1px;border-radius:0}#html-body [data-pb-style=I3E10DA]{margin:0;padding:0}#html-body [data-pb-style=WAKW04M]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:33.3333%;margin:0;padding:10px;align-self:stretch}#html-body [data-pb-style=B45TFFR],#html-body [data-pb-style=P9QU7F6],#html-body [data-pb-style=WAKW04M]{border-style:none;border-width:1px;border-radius:0}#html-body [data-pb-style=B45TFFR]{margin:0;padding:0}#html-body [data-pb-style=YNKLRSQ]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:33.3333%;margin:0;padding:10px;align-self:stretch}#html-body [data-pb-style=AAMQR9G],#html-body [data-pb-style=CEH46N2],#html-body [data-pb-style=YNKLRSQ]{border-style:none;border-width:1px;border-radius:0}#html-body [data-pb-style=CEH46N2]{margin:0;padding:0}#html-body [data-pb-style=M5S03KT]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0}#html-body [data-pb-style=IU6C4BE]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}</style><div data-content-type="row" data-appearance="contained" data-element="main"><div class="footer-links" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="LIY6AYK"><div class="pagebuilder-column-group" data-background-images="{}" data-content-type="column-group" data-appearance="default" data-grid-size="12" data-element="main" data-pb-style="AL4OWY3"><div class="pagebuilder-column-line" data-content-type="column-line" data-element="main" data-pb-style="RPGK78G"><div class="pagebuilder-column menu-footer" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="J0SLCDN"><h3 data-content-type="heading" data-appearance="default" data-element="main" data-pb-style="AFQJEY1">quick links</h3><div class="menu-container" data-content-type="html" data-appearance="default" data-element="main" data-pb-style="I3E10DA" data-decoded="true"><style>
+.g-recaptcha {margin-bottom:25px;}
+@media only screen and (min-width: 768px) {
+.block.filter .filter-title{display:none;}
+.page-wrapper .page-footer{padding: 0;}
+li.level1.nav-3-1.first.menu_a.last.parent.column_mega_menu1 {width: 100%;}
+}
+@media only screen and (max-width: 767px) {
+.nav-sections-items {z-index:99;}
+.nav-open .nav-sections {z-index:99999;}
+.amlocator-index-index #maincontent {position: relative; z-index: 1;}
+}
+</style>
+
+<div class="content links">
+    <ul>
+        <li><a href="https://www.coffeebean.com.sg/about-us">About Us</a></li>
+        <li><a href="https://www.coffeebean.com.sg/amlocator">Store Locator</a></li>
+        <li><a href="https://www.coffeebean.com.sg/career">Careers</a></li>
+        <li><a href="https://www.coffeebean.com.sg/terms-and-conditions">Website Terms & Conditions</a></li>
+        <li><a href="https://www.coffeebean.com.sg/mobile-terms-and-conditions">Mobile App Terms & Conditions</a></li>
+        <li><a href="https://www.coffeebean.com.sg/privacy-policy">Privacy Policy</a></li>
+    </ul>
+</div></div></div><div class="pagebuilder-column menu-footer" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="WAKW04M"><h3 data-content-type="heading" data-appearance="default" data-element="main" data-pb-style="P9QU7F6">customer care</h3><div class="menu-container" data-content-type="html" data-appearance="default" data-element="main" data-pb-style="B45TFFR" data-decoded="true"><div class="content links customer-care">
+    <span>Share with us your feedback!</span><br/>
+    <ul>
+        <li class="feedback-frm"><a href="https://faq.coffeebean.com.sg/hc/en-us/p/contact-us">Contact Us Form</a></li>
+<li><a href="https://faq.coffeebean.com.sg/hc/en-us">Help Center</a></li>
+    </ul>
+</div>
+</div></div><div class="pagebuilder-column menu-footer" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="YNKLRSQ"><h3 class="for-testing" data-content-type="heading" data-appearance="default" data-element="main" data-pb-style="AAMQR9G">CoffeeBean Sg Rewards E-card</h3><div class="menu-container" data-content-type="html" data-appearance="default" data-element="main" data-pb-style="CEH46N2" data-decoded="true"><div class="content links">
+    <ul>
+        <li><a href="https://www.coffeebean.com.sg/beancard/register/">Register My E-Card</a></li>
+        <li class="feedback-frm"><a href="https://www.coffeebean.com.sg/beancard/topup/">Top Up My E-Card</a></li>
+        <li class="feedback-frm"><a href="https://www.coffeebean.com.sg/beancard">Manage My E-Card</a></li>
+    </ul>
+</div>
+
+
+</div></div></div></div></div></div><div data-content-type="row" data-appearance="contained" data-element="main"><div class="general-style" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="M5S03KT"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="IU6C4BE" data-decoded="true"><style>
+.field-recaptcha {clear: both;}
+.product-item .price-box .price-wrapper  >.price {font-size: 1.8rem; letter-spacing: .02em;}
+</style></div><div data-content-type="block" data-appearance="default" data-element="main"> <div class="widget block block-static-block"><style>#html-body [data-pb-style=HE079HR]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;margin:0 0 10px;padding:10px}#html-body [data-pb-style=KTTQBOJ]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}</style><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="HE079HR"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="KTTQBOJ" data-decoded="true"><style>
+/*.footer-right .block.newsletter,
+.general-style .widget.block {
+   display: none;
+   width: 0;
+   height: 0;
+}*/
+.page-product-bundle .product-info-price .price-box.price-final_price {
+   display: flex;
+   gap: 20px;
+}
+.page-product-bundle .product-info-price .price-label {
+    clip: unset;
+    height: auto;
+    overflow: visible;
+    position: unset;
+    margin: 0 10px 0 0;
+}
+
+.cms-career aside.modal-popup._show {
+   z-index: 999!important;
+}
+.catalog-product-view .fotorama__stage__shaft.fotorama__grab {
+  margin-left: 0!important;
+}
+@media screen and (min-width: 951px) {
+  .menu>ul>li>ul {
+      top: 51px;
+   }
+}
+
+@media only screen and (max-width: 950px) and (min-width: 768px) {
+   .menu>ul>li>ul {
+      top: 49px;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   .menu>ul>li>ul {
+      width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 20px calc((100vw - 1400px) / 2);
+   }
+}
+</style></div></div></div></div></div></div></div>  <div class="footer-right"><div class="block newsletter"><div class="title"><strong>Newsletter</strong></div><div class="content"><label class="label" for="newsletter"><span>Join our mailing list for exclusive deals:</span></label> <form class="form subscribe" novalidate action="https://www.coffeebean.com.sg/newsletter/subscriber/new/" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-detail"><div class="field newsletter"><div class="control"><input name="email" type="email" id="newsletter" placeholder="Your E-mail" data-validate="{required:true, 'validate-email':true}"/></div></div><div class="actions"><button class="action subscribe primary" title="Subscribe sad" type="submit"><span>Subscribe</span></button></div><div class="scg-msg"><div class="messages"></div></div></form></div></div><div class="footer-social-container"><style>#html-body [data-pb-style=LEESS7D]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=LEESS7D],#html-body [data-pb-style=V2AMNJQ]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}</style><div data-content-type="row" data-appearance="contained" data-element="main"><div class="social-footer" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="LEESS7D"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="V2AMNJQ" data-decoded="true"><div class="footer-social-links">
+    <div class ="fb">
+        <a target="_blank" href="https://www.facebook.com/coffeebean.sg"><img style="max-width: 146px;" src="https://www.coffeebean.com.sg/media/wysiwyg/homepage/fb.png" alt="" /></a>
+    </div>
+    <div class ="inst">
+        <a target="_blank" href="https://www.instagram.com/coffeebeansg/"><img style="max-width: 143px;" src="https://www.coffeebean.com.sg/media/wysiwyg/homepage/ig.png" alt="" /></a>
+    </div>
+</div></div></div></div></div></div></div> <div class="copyright-wrap"><div class="copyright"><span>Copyright © 2026. The Coffee Bean &amp; Tea Leaf Pte Ltd. All Rights Reserved.</span></div></div></footer>           <!-- Facebook Pixel Code --> <!-- End Facebook Pixel Code --><div class="back-top"><button class="back-to-top" id="back-to-top"><i class="fa fa-arrow-up"></i><span>Back to Top</span></button></div></div>
+<script> var LOCALE = 'en\u002DUS'; var BASE_URL = 'https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002F'; var require = { 'baseUrl': 'https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fstatic\u002Fversion1775620110\u002Ffrontend\u002FCoffeebean\u002Fdefault\u002Fen_US' };</script>
+<script  type="text/javascript"  src="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/requirejs/require.min.js"></script>
+<script  type="text/javascript"  src="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/requirejs-min-resolver.min.js"></script>
+<script  type="text/javascript"  src="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/mage/requirejs/mixins.min.js"></script>
+<script  type="text/javascript"  src="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/requirejs-config.min.js"></script>
+<script  type="text/javascript"  src="https://www.coffeebean.com.sg/static/version1775620110/frontend/Coffeebean/default/en_US/Mageplaza_SocialShare/js/thankskit.min.js"></script>
+<script  type="text/javascript"  src="https://static.addtoany.com/menu/page.js"></script>
+<script  type="text/javascript"  data-routing="commerce=rum" defer="defer" src="https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_PageCache/js/form-key-provider": {
+                    "isPaginationCacheEnabled":
+                        0                }
+            }
+        }</script>
+<script type="text/x-magento-init">
+            {
+                "*": {
+                    "Magento_GoogleTagManager/js/google-tag-manager": {
+                        "isCookieRestrictionModeEnabled": 0,
+                        "currentWebsite": 1,
+                        "cookieName": "user_allowed_save_cookie",
+                        "gtmAccountId": "GTM\u002D5WGKRF8",
+                        "storeCurrencyCode": "SGD",
+                        "ordersData": []                    }
+                }
+            }</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_PageBuilder/js/widget-initializer": {
+                "config": {"[data-content-type=\"slider\"][data-appearance=\"default\"]":{"Magento_PageBuilder\/js\/content-type\/slider\/appearance\/default\/widget":false},"[data-content-type=\"map\"]":{"Magento_PageBuilder\/js\/content-type\/map\/appearance\/default\/widget":false},"[data-content-type=\"row\"]":{"Magento_PageBuilder\/js\/content-type\/row\/appearance\/default\/widget":false},"[data-content-type=\"tabs\"]":{"Magento_PageBuilder\/js\/content-type\/tabs\/appearance\/default\/widget":false},"[data-content-type=\"slide\"]":{"Magento_PageBuilder\/js\/content-type\/slide\/appearance\/default\/widget":{"buttonSelector":".pagebuilder-slide-button","showOverlay":"hover","dataRole":"slide"}},"[data-content-type=\"banner\"]":{"Magento_PageBuilder\/js\/content-type\/banner\/appearance\/default\/widget":{"buttonSelector":".pagebuilder-banner-button","showOverlay":"hover","dataRole":"banner"}},"[data-content-type=\"buttons\"]":{"Magento_PageBuilder\/js\/content-type\/buttons\/appearance\/inline\/widget":false},"[data-content-type=\"products\"][data-appearance=\"carousel\"]":{"Magento_PageBuilder\/js\/content-type\/products\/appearance\/carousel\/widget":false}},
+                "breakpoints": {"desktop":{"label":"Desktop","stage":true,"default":true,"class":"desktop-switcher","icon":"Magento_PageBuilder::css\/images\/switcher\/switcher-desktop.svg","conditions":{"min-width":"1024px"},"options":{"products":{"default":{"slidesToShow":"5"}}}},"tablet":{"conditions":{"max-width":"1024px","min-width":"768px"},"options":{"products":{"default":{"slidesToShow":"4"},"continuous":{"slidesToShow":"3"}}}},"mobile":{"label":"Mobile","stage":true,"class":"mobile-switcher","icon":"Magento_PageBuilder::css\/images\/switcher\/switcher-mobile.svg","media":"only screen and (max-width: 768px)","conditions":{"max-width":"767px","min-width":"375px"},"options":{"products":{"default":{"slidesToShow":"3"}}}},"mobile-small":{"conditions":{"max-width":"640px"},"options":{"products":{"default":{"slidesToShow":"2"},"continuous":{"slidesToShow":"1"}}}}}            }
+        }
+    }</script>
+<script type="text&#x2F;javascript">document.querySelector("#cookie-status").style.display = "none";</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "cookieStatus": {}
+        }
+    }</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mage/cookies": {
+                "expires": null,
+                "path": "\u002F",
+                "domain": ".www.coffeebean.com.sg",
+                "secure": true,
+                "lifetime": "3600"
+            }
+        }
+    }</script>
+<script> window.cookiesConfig = window.cookiesConfig || {}; window.cookiesConfig.secure = true; </script>
+<script>    require.config({
+        map: {
+            '*': {
+                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymceAdapter'
+            }
+        }
+    });</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_GoogleTagManager/js/google-tag-manager-cart": {
+                "blockNames": ["category.products.list","product.info.upsell","catalog.product.related","checkout.cart.crosssell","search_result_list"],
+                "cookieAddToCart": "add_to_cart",
+                "cookieRemoveFromCart":
+                    "remove_from_cart",
+                "advancedAddToCart": "add_to_cart_advanced"
+            }
+        }
+    }</script>
+<script>    require.config({
+        paths: {
+            googleMaps: 'https\u003A\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs\u003Fv\u003D3.53\u0026key\u003D'
+        },
+        config: {
+            'Magento_PageBuilder/js/utils/map': {
+                style: '',
+            },
+            'Magento_PageBuilder/js/content-type/map/preview': {
+                apiKey: '',
+                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+            },
+            'Magento_PageBuilder/js/form/element/map': {
+                apiKey: '',
+                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+            },
+        }
+    });</script>
+<script>
+    require.config({
+        shim: {
+            'Magento_PageBuilder/js/utils/map': {
+                deps: ['googleMaps']
+            }
+        }
+    });</script>
+<script>window.checkout = {"shoppingCartUrl":"https:\/\/www.coffeebean.com.sg\/checkout\/cart\/","checkoutUrl":"https:\/\/www.coffeebean.com.sg\/checkout\/","updateItemQtyUrl":"https:\/\/www.coffeebean.com.sg\/checkout\/sidebar\/updateItemQty\/","removeItemUrl":"https:\/\/www.coffeebean.com.sg\/checkout\/sidebar\/removeItem\/","imageTemplate":"Magento_Catalog\/product\/image_with_borders","baseUrl":"https:\/\/www.coffeebean.com.sg\/","minicartMaxItemsVisible":3,"websiteId":"1","maxItemsToDisplay":30,"storeId":"1","storeGroupId":"1","customerLoginUrl":"https:\/\/www.coffeebean.com.sg\/customer\/account\/login\/referer\/aHR0cHM6Ly93d3cuY29mZmVlYmVhbi5jb20uc2cv\/","isRedirectRequired":false,"autocomplete":"off","captcha":{"user_login":{"isCaseSensitive":false,"imageHeight":50,"imageSrc":"","refreshUrl":"https:\/\/www.coffeebean.com.sg\/captcha\/refresh\/","isRequired":false,"timestamp":1776445215}}}</script>
+<script type="text/x-magento-init">
+    {
+        "[data-block='minicart']": {
+            "Magento_Ui/js/core/app": {"components":{"minicart_content":{"children":{"subtotal.container":{"children":{"subtotal":{"children":{"subtotal.totals":{"config":{"display_cart_subtotal_incl_tax":0,"display_cart_subtotal_excl_tax":1,"template":"Magento_Tax\/checkout\/minicart\/subtotal\/totals"},"component":"Magento_Tax\/js\/view\/checkout\/minicart\/subtotal\/totals","children":{"subtotal.totals.msrp":{"component":"Magento_Msrp\/js\/view\/checkout\/minicart\/subtotal\/totals","config":{"displayArea":"minicart-subtotal-hidden","template":"Magento_Msrp\/checkout\/minicart\/subtotal\/totals"}}}}},"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/subtotal"}}},"component":"uiComponent","config":{"displayArea":"subtotalContainer"}},"item.renderer":{"component":"Magento_Checkout\/js\/view\/cart-item-renderer","config":{"displayArea":"defaultRenderer","template":"Magento_Checkout\/minicart\/item\/default"},"children":{"item.image":{"component":"Magento_Catalog\/js\/view\/image","config":{"template":"Magento_Catalog\/product\/image","displayArea":"itemImage"}},"checkout.cart.item.price.sidebar":{"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/item\/price","displayArea":"priceSidebar"}}}},"extra_info":{"component":"uiComponent","config":{"displayArea":"extraInfo"}},"promotion":{"component":"uiComponent","config":{"displayArea":"promotion"}}},"config":{"itemRenderer":{"default":"defaultRenderer","simple":"defaultRenderer","virtual":"defaultRenderer"},"template":"Magento_Checkout\/minicart\/content"},"component":"Magento_Checkout\/js\/view\/minicart"}},"types":[]}        },
+        "*": {
+            "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fstatic\u002Fversion1775620110\u002Ffrontend\u002FCoffeebean\u002Fdefault\u002Fen_US\u002Fimages\u002Floader\u002D1.gif"
+        }
+    }</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Magento_Customer/js/view/customer"
+                    }
+                }
+            }
+        }
+    }</script>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "searchsuiteautocomplete_form": {
+                    "component": "MageWorx_SearchSuiteAutocomplete/js/autocomplete"
+                },
+                "searchsuiteautocompleteBindEvents": {
+                    "component": "MageWorx_SearchSuiteAutocomplete/js/bindEvents",
+                    "config": {
+                        "searchFormSelector": "#search_mini_form",
+                        "searchButtonSelector": "button.search",
+                        "inputSelector": "#search, #mobile_search, .minisearch input[type=\"text\"]",
+                        "searchDelay": "500"
+                    }
+                },
+                "searchsuiteautocompleteDataProvider": {
+                    "component": "MageWorx_SearchSuiteAutocomplete/js/dataProvider",
+                    "config": {
+                        "url": "https://www.coffeebean.com.sg/mageworx_searchsuiteautocomplete/ajax/index/"
+                    }
+                }
+            }
+        }
+    }
+}</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "messages": {
+                            "component": "Magento_Theme/js/view/messages"
+                        }
+                    }
+                }
+            }
+    }</script>
+<script>window.authenticationPopup = {"autocomplete":"off","customerRegisterUrl":"https:\/\/www.coffeebean.com.sg\/customer\/account\/create\/","customerForgotPasswordUrl":"https:\/\/www.coffeebean.com.sg\/customer\/account\/forgotpassword\/","baseUrl":"https:\/\/www.coffeebean.com.sg\/","customerLoginUrl":"https:\/\/www.coffeebean.com.sg\/customer\/ajax\/login\/"}</script>
+<script type="text/x-magento-init">
+        {
+            "#authenticationPopup": {
+                "Magento_Ui/js/core/app": {"components":{"authenticationPopup":{"component":"Magento_Customer\/js\/view\/authentication-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"},"captcha":{"component":"Magento_Captcha\/js\/view\/checkout\/loginCaptcha","displayArea":"additional-login-form-fields","formId":"user_login","configSource":"checkout"}}}}}            },
+            "*": {
+                "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fstatic\u002Fversion1775620110\u002Ffrontend\u002FCoffeebean\u002Fdefault\u002Fen_US\u002Fimages\u002Floader\u002D1.gif"
+                 }
+        }</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/section-config": {
+                "sections": {"stores\/store\/switch":["*"],"stores\/store\/switchrequest":["*"],"directory\/currency\/switch":["*"],"*":["messages","apptrian_facebook_pixel_matching_section"],"customer\/account\/logout":["*","recently_viewed_product","recently_compared_product","persistent"],"customer\/account\/loginpost":["*"],"customer\/account\/createpost":["*"],"customer\/account\/editpost":["*"],"customer\/ajax\/login":["checkout-data","cart","captcha"],"catalog\/product_compare\/add":["compare-products"],"catalog\/product_compare\/remove":["compare-products"],"catalog\/product_compare\/clear":["compare-products"],"sales\/guest\/reorder":["cart","amasty-storepickup-data","amasty-selected-pickup-info"],"sales\/order\/reorder":["cart","amasty-storepickup-data","amasty-selected-pickup-info"],"checkout\/cart\/add":["cart","directory-data","amasty-storepickup-data","amasty-selected-pickup-info","card_no_selection"],"checkout\/cart\/delete":["cart","amasty-storepickup-data","amasty-selected-pickup-info","card_no_selection"],"checkout\/cart\/updatepost":["cart","amasty-storepickup-data","card_no_selection"],"checkout\/cart\/updateitemoptions":["cart","amasty-storepickup-data","card_no_selection"],"checkout\/cart\/couponpost":["cart","card_no_selection"],"checkout\/cart\/estimatepost":["cart","amasty-storepickup-data","card_no_selection"],"checkout\/cart\/estimateupdatepost":["cart","amasty-storepickup-data","card_no_selection"],"checkout\/onepage\/saveorder":["cart","checkout-data","last-ordered-items","amasty-storepickup-data","amasty-selected-pickup-info","card_no_selection"],"checkout\/sidebar\/removeitem":["cart","amasty-storepickup-data","card_no_selection"],"checkout\/sidebar\/updateitemqty":["cart","amasty-storepickup-data","card_no_selection"],"rest\/*\/v1\/carts\/*\/payment-information":["cart","last-ordered-items","captcha","instant-purchase","card_no_selection"],"rest\/*\/v1\/guest-carts\/*\/payment-information":["cart","captcha","card_no_selection"],"rest\/*\/v1\/guest-carts\/*\/selected-payment-method":["cart","checkout-data","card_no_selection"],"rest\/*\/v1\/carts\/*\/selected-payment-method":["cart","checkout-data","instant-purchase","card_no_selection"],"wishlist\/index\/add":["wishlist","wishlisticon"],"wishlist\/index\/remove":["wishlist","wishlisticon"],"wishlist\/index\/updateitemoptions":["wishlist"],"wishlist\/index\/update":["wishlist"],"wishlist\/index\/cart":["wishlist","cart"],"wishlist\/index\/fromcart":["wishlist","cart"],"wishlist\/index\/allcart":["wishlist","cart"],"wishlist\/shared\/allcart":["wishlist","cart"],"wishlist\/shared\/cart":["cart"],"giftregistry\/index\/cart":["cart"],"giftregistry\/view\/addtocart":["cart"],"customer\/address\/*":["instant-purchase"],"customer\/account\/*":["instant-purchase"],"vault\/cards\/deleteaction":["instant-purchase"],"customer_order\/cart\/updatefaileditemoptions":["cart"],"checkout\/cart\/updatefaileditemoptions":["cart"],"customer_order\/cart\/advancedadd":["cart"],"checkout\/cart\/advancedadd":["cart"],"checkout\/cart\/removeallfailed":["cart"],"checkout\/cart\/removefailed":["cart"],"customer_order\/cart\/addfaileditems":["cart"],"checkout\/cart\/addfaileditems":["cart"],"customer_order\/sku\/uploadfile":["cart"],"multishipping\/checkout\/overviewpost":["cart","amasty-storepickup-data","amasty-selected-pickup-info"],"wishlist\/index\/copyitem":["wishlist"],"wishlist\/index\/copyitems":["wishlist"],"wishlist\/index\/deletewishlist":["wishlist","multiplewishlist"],"wishlist\/index\/createwishlist":["multiplewishlist"],"wishlist\/index\/editwishlist":["multiplewishlist"],"wishlist\/index\/moveitem":["wishlist"],"wishlist\/index\/moveitems":["wishlist"],"wishlist\/search\/addtocart":["cart","wishlist"],"paypal\/express\/placeorder":["cart","checkout-data","amasty-storepickup-data","amasty-selected-pickup-info"],"paypal\/payflowexpress\/placeorder":["cart","checkout-data","amasty-storepickup-data","amasty-selected-pickup-info"],"paypal\/express\/onauthorization":["cart","checkout-data","amasty-storepickup-data","amasty-selected-pickup-info"],"persistent\/index\/unsetcookie":["persistent"],"review\/product\/post":["review"],"paymentservicespaypal\/smartbuttons\/placeorder":["cart","checkout-data"],"paymentservicespaypal\/smartbuttons\/cancel":["cart","checkout-data"],"amasty_cart\/cart\/add":["amasty-storepickup-data","amasty-selected-pickup-info"],"braintree\/paypal\/placeorder":["amasty-storepickup-data","amasty-selected-pickup-info","cart","checkout-data"],"authorizenet\/directpost_payment\/place":["amasty-storepickup-data","amasty-selected-pickup-info"],"catalog\/product\/view":["card_no_selection","wishlisticon"],"quickview\/catalog_product\/view":["wishlisticon"],"braintree\/googlepay\/placeorder":["cart","checkout-data"]},
+                "clientSideSections": ["checkout-data","cart-data","amasty-selected-pickup-info"],
+                "baseUrls": ["https:\/\/www.coffeebean.com.sg\/"],
+                "sectionNames": ["messages","customer","compare-products","last-ordered-items","cart","directory-data","captcha","wishlist","instant-purchase","loggedAsCustomer","multiplewishlist","persistent","review","payments","amasty-storepickup-data","apptrian_facebook_pixel_matching_section","card_no_selection","wishlisticon","recently_viewed_product","recently_compared_product","product_data_storage","paypal-billing-agreement"]            }
+        }
+    }</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/customer-data": {
+                "sectionLoadUrl": "https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fcustomer\u002Fsection\u002Fload\u002F",
+                "expirableSectionLifetime": 60,
+                "expirableSectionNames": ["cart","persistent","amasty-storepickup-data"],
+                "cookieLifeTime": "3600",
+                "cookieDomain": "",
+                "updateSessionUrl": "https\u003A\u002F\u002Fwww.coffeebean.com.sg\u002Fcustomer\u002Faccount\u002FupdateSession\u002F",
+                "isLoggedIn": ""
+            }
+        }
+    }</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/invalidation-processor": {
+                "invalidationRules": {
+                    "website-rule": {
+                        "Magento_Customer/js/invalidation-rules/website-rule": {
+                            "scopeConfig": {
+                                "websiteId": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }</script>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "pageCache": {"url":"https:\/\/www.coffeebean.com.sg\/page_cache\/block\/render\/","handles":["default","cms_index_index","cms_page_view","cms_index_index_id_home"],"originalRequest":{"route":"cms","controller":"index","action":"index","uri":"\/"},"versionCookieName":"private_content_version"}        }
+    }</script>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Banner/js/model/banner":
+            {"sectionLoadUrl":"https:\/\/www.coffeebean.com.sg\/banner\/ajax\/load\/","cacheTtl":30000}        }
+}</script>
+<script type="text/javascript">
+    require(["jquery", 'Coffeebean_MegaMenu/js/menu'], function ($) {
+
+    });</script>
+<script>
+require(['jquery'], function($){
+ setTimeout(function() {
+            var activeTab =  $('.amlocator-stores-wrapper .amlocator-store-desc').first();
+            $(activeTab).click();
+        }, 1000);
+});
+</script>
+<script>
+    require(['jquery'],function($){
+        var form = $('#newsletter-validate-detail');
+        form.submit(function(e) {
+            if(form.validation('isValid')){
+                var email = $("#newsletter-validate-detail #newsletter").val();
+                var url = form.attr('action');
+                var loadingMessage = $('#loading-message');
+
+                if(loadingMessage.length == 0) {
+                    form.find('.input-group').append('<div id="loading-message" style="display:none;padding-top:10px;color: red;font-size: 13px;">&nbsp;</div>');
+                    var loadingMessage = $('#loading-message');
+                }
+
+                e.preventDefault();
+                try{
+                    loadingMessage.html('Submitting...').show();
+                    $('.scg-msg > messages').html();
+
+                    $.ajax({
+                        url: url,
+                        dataType: 'json',
+                        type: 'POST',
+                        data: {email: email},
+                        success: function (data){
+                            if(data.status != "ERROR"){
+                                $("#newsletter-validate-detail #newsletter").val('');
+                                $('#newsletter-validate-detail .scg-msg > .messages').html('<div class="message-success success message" ><div >' +
+                                    data.msg + '</div></div>');
+                            }else{
+                                $('#newsletter-validate-detail .scg-msg > .messages').html('<div class="message-error error message" >' +
+                                    '<div>'+data.msg +'</div></div>');
+                            }
+                            loadingMessage.html(data.msg);
+                        },
+                    });
+                } catch (e){
+                    loadingMessage.html(e.message);
+                }
+            }
+        });
+    })</script>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "storage-manager": {
+                            "component": "Magento_Catalog/js/storage-manager",
+                            "appendTo": "",
+                            "storagesConfiguration" : {"recently_viewed_product":{"requestConfig":{"syncUrl":"https:\/\/www.coffeebean.com.sg\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"recently_compared_product":{"requestConfig":{"syncUrl":"https:\/\/www.coffeebean.com.sg\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"product_data_storage":{"updateRequestConfig":{"url":"https:\/\/www.coffeebean.com.sg\/rest\/default\/V1\/products-render-info"},"requestConfig":{"syncUrl":"https:\/\/www.coffeebean.com.sg\/catalog\/product\/frontend_action_synchronize\/"},"allowToSendRequest":null}}                        }
+                    }
+                }
+            }
+        }</script>
+<script type="application&#x2F;json" id="dotdigital-email-capture-config">{"capture_url":"https:\/\/www.coffeebean.com.sg\/connector\/ajax\/emailcapture\/","form_key":"hJFFg91w5QSqUkiW","layout":"cms_index_index","layout_postable":[],"layout_identifiers":{"default":["#newsletter"],"checkout_index_index":["#customer-email","#login-email"],"customer_account_login":["#email"],"customer_account_create":["#email_address"]}}</script>
+<script src="https&#x3A;&#x2F;&#x2F;www.coffeebean.com.sg&#x2F;static&#x2F;version1775620110&#x2F;frontend&#x2F;Coffeebean&#x2F;default&#x2F;en_US&#x2F;Dotdigitalgroup_Email&#x2F;js&#x2F;emailCapture.min.js"></script>
+<script type="text/javascript" src="https://static.addtoany.com/menu/page.js"></script>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "quickView":  { "baseUrl": "https://www.coffeebean.com.sg/" },
+        "compare":{},
+        "ajaxWishlist":{
+            "loginUrl":"https://www.coffeebean.com.sg/customer/account/login/"
+        }
+    }
+}</script>
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.agent='dvapptrian';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+          require([
+    'jquery',
+    'underscore',
+    'mage/url',
+    'mage/cookies'
+], function ($, _, mageUrl) {
+    var propagationStop = 0;
+    
+    $(function () {
+        
+        function getUserData()
+        {
+            var sectionUrl = 'https://www.coffeebean.com.sg/customer/section/load';
+            
+            $.ajax({
+                url: sectionUrl,
+                cache: false,
+                data: {
+                    sections: "apptrian_facebook_pixel_matching_section"
+                },
+                type: "GET",
+                dataType : "json"
+            })
+            .done(function(json) {
+                run(json);
+            });
+        }
+        
+        getUserData();
+        
+        function run(response) {
+            
+            var userData = {};
+            var apptrianFacebookPixelUrl="https://www.coffeebean.com.sg/";                                                
+            function isEmpty(obj) {
+                for(var prop in obj) {
+                    if(obj.hasOwnProperty(prop)) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
+            if (propagationStop === 0) {
+                propagationStop = 1;
+                
+                var section;
+                var sectionData;
+                
+                if (response !== 'undefined' && response.hasOwnProperty('apptrian_facebook_pixel_matching_section')) {
+                    section = response.apptrian_facebook_pixel_matching_section;
+                    
+                    if (section !== 'undefined' && section.hasOwnProperty('matching_data')) {
+                        sectionData = section.matching_data;
+                        
+                        if (!isEmpty(sectionData)) {
+                            userData = sectionData;
+                        }
+                    }
+                }
+    
+              fbq('init', '4664469390329472', userData);
+          function stringToHash(string)
+        {
+            var hash = 0;
+              
+            if (string.length == 0) return hash;
+              
+            for (i = 0; i < string.length; i++) {
+                char = string.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            
+            return String(hash);
+        }
+        
+        function generateEventId(eName)
+        {
+            var uCookie = document.cookie;
+            var uHash = stringToHash(uCookie);
+            var url = window.location.href;
+            var urlHash = stringToHash(url);
+            
+            function getTimeStamp() {
+                if (!Date.now) {
+                    Date.now = function() { return new Date().getTime(); }
+                }
+                
+                return Date.now();
+            }
+            
+            var timestamp = String(getTimeStamp());
+            
+            return eName + uHash + urlHash + timestamp;
+        }
+        
+        function fireConversionsApiEvent(eName, eData, eId)
+        {
+            var apiUrl = 'https://www.coffeebean.com.sg/apptrian_facebookpixel/index/index';
+            
+            $.ajax({
+                url: apiUrl,
+                cache: false,
+                data: {
+                    eventName: eName,
+                    eventData: eData,
+                    eventId: eId,
+                    url: window.location.href,
+                    userData: userData
+                },
+                type: "GET",
+                dataType : "json",
+            })
+            .done(function( json ) {
+                var result = json;
+            });
+        }
+        
+        function moveParamsOutsideContents(data) {
+            var isMoveParamsOutsideContentsEnabled = 1;
+     if (isMoveParamsOutsideContentsEnabled) {
+                if (!('contents' in data)) {
+                    return data;
+                }
+                
+                var contents       = data['contents'];
+                var contentsLength = contents.length;
+                
+                if (contentsLength > 1) {
+                    var c = 0;
+                    for (i = 0; i < contentsLength; i++) {
+                        var item = contents[i];
+                        
+                        for (var index in item) {
+                            if (index == 'id' || index == 'item_price' || index == 'quantity') {
+                                continue;
+                            }
+                            
+                            
+                            
+                            delete data['contents'][c][index];
+                        }
+                        
+                        c++;
+                    }
+                } else {
+                    var item = contents[0];
+                    for (var index in item) {
+                        var value = item[index];
+                        if (index == 'id' || index == 'item_price' || index == 'quantity') {
+                            continue;
+                        }
+                        
+                        
+                        data[index] = value;
+                        
+                        delete data['contents'][0][index];
+                    }
+                }
+                
+                return data;
+            } else {
+                return data;
+            }
+        }
+        
+        
+        var pageViewEventId = generateEventId("PageView");
+        var pageViewEventIdObj = {};
+        pageViewEventIdObj.eventID = pageViewEventId;
+        
+        var pageViewData = {};
+    
+                 fbq("track", "PageView", pageViewData, pageViewEventIdObj);
+            } 
+    } 
+    
+        function getCookieDataFromString(str)
+        {
+            var data = {};
+            
+            try {
+                data = JSON.parse(str);
+            } catch (e) {
+                if (str.indexOf('=') > -1) {
+                    var arr = str.split('=');
+                    var key = '';
+                    var value = '';
+                    var k = 1;
+                    
+                    for (let i = 0; i < arr.length; i+=2) {
+                        key   = '';
+                        value = '';
+                        
+                        if (arr[i] !== undefined) {
+                            key = arr[i].trim();
+                        }
+                        
+                        if (arr[k] !== undefined) {
+                            value = arr[k].trim();
+                        }
+                        
+                        if (key) {
+                            data[key] = value;
+                        }
+                        
+                        k+=2;
+                    }
+                } else {
+                    data = str;
+                }
+            }
+            
+            return data;
+        }
+        
+        function isConsentGranted()
+        {
+            var isCookieConsentEnabled = 0;
+            
+            
+            if (!isCookieConsentEnabled) {
+                return 1;
+            }
+            
+            var cookieName = 'user_allowed_save_cookie';
+            var cookie     = $.mage.cookies.get(cookieName);
+            var result     = 0;
+            
+            if (!cookie) {
+                return result;
+            }
+            
+            var cookieData  = getCookieDataFromString(cookie);
+            var cookieKey   = '';
+            var cookieValue = '';
+            
+            if (cookieKey && cookieValue) {
+                if (typeof cookieData === 'object' && cookieData[cookieKey] !== undefined) {
+                    var value = cookieData[cookieKey];
+                    
+                    if (value == cookieValue) {
+                        result = 1;
+                    }
+                }
+            } else if (!cookieKey && cookieValue) {
+                if (cookie == cookieValue) {
+                    result = 1;
+                }
+            } else if (cookieKey && !cookieValue) {
+                if (typeof cookieData === 'object' && cookieKey in cookieData) {
+                    result = 1;
+                }
+            } else {
+                if (cookie) {
+                    result = 1;
+                }
+            }
+            
+            return result;
+        }
+        
+        function checkConsent()
+        {
+            if (isConsentGranted()) {
+                 }
+        }
+        
+        
+        checkConsent();
+        
+        var consentButton = $('#btn-cookie-allow');
+        
+        if (consentButton.length) {
+            
+            consentButton.on('click', function() {
+                setTimeout(function() {
+                    checkConsent();
+                }, 1000);
+            });
+        }
+    
+    }); 
+});</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-3e4e9a71de756f70db6","applicationID":"820796320","transactionName":"bwQEbEUCWkMCARFaWFZOJ1tDClteTAEIQBhRDwJdT0xdXgcHHQ==","queueTime":0,"applicationTime":475,"atts":"Q0MTGg0YSRxBA0cJTEUc","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>
