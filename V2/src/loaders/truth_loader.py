@@ -101,7 +101,9 @@ def load_mens_2026_tournament_table() -> pd.DataFrame:
     team_rows["SeedNum"] = team_rows["tournament_seed"].astype(int)
     team_rows["GamesWon"] = team_rows["games_won"].astype(int)
     team_rows["Result"] = team_rows["tournament_result"]
-    return team_rows[["TeamID", "team", "SeedNum", "GamesWon", "Result"]]
+    # ResultNumeric = round of last game played: R68=0, R64=1, R32=2, ...
+    team_rows["ResultNumeric"] = team_rows["Result"].map(RESULT_TO_ROUND).fillna(-1).astype(int)
+    return team_rows[["TeamID", "team", "SeedNum", "GamesWon", "Result", "ResultNumeric"]]
 
 
 def _reconstruct_men_bracket(team_table: pd.DataFrame) -> pd.DataFrame:
@@ -118,8 +120,10 @@ def _reconstruct_men_bracket(team_table: pd.DataFrame) -> pd.DataFrame:
     seeds = kl.load_m_seeds()
     seeds = seeds[seeds["Season"] == HOLDOUT_SEASON][["Seed", "TeamID"]]
 
-    # Quick lookups
-    gw = dict(zip(team_table["TeamID"], team_table["GamesWon"]))
+    # Quick lookups. Use ResultNumeric (round of last game played) as the
+    # primary signal — it disambiguates play-in winners from R64 winners.
+    result_num = dict(zip(team_table["TeamID"], team_table["ResultNumeric"]))
+    seed_num   = dict(zip(team_table["TeamID"], team_table["SeedNum"]))
 
     seed_to_team = dict(zip(seeds["Seed"], seeds["TeamID"]))
 
@@ -154,16 +158,24 @@ def _reconstruct_men_bracket(team_table: pd.DataFrame) -> pd.DataFrame:
         t2 = resolve(row["WeakSeed"])
         round_ = row["round_order"]
         if t1 is None or t2 is None:
-            # Likely unresolved slot — skip, but warn
             continue
-        g1 = gw.get(t1, -1)
-        g2 = gw.get(t2, -1)
-        if g1 == g2:
-            # Tie means neither of them played this matchup OR both lost
-            # at the same round; we keep pre-tournament losers as 0 wins
-            # and skip the unplayed slot.
+        # Winner of this slot's round R = team whose ResultNumeric > R
+        # (they advanced past this round). Loser has ResultNumeric == R.
+        r1, r2 = result_num.get(t1, -1), result_num.get(t2, -1)
+        if r1 > round_ and r2 <= round_:
+            winner, loser = t1, t2
+        elif r2 > round_ and r1 <= round_:
+            winner, loser = t2, t1
+        elif r1 > round_ and r2 > round_:
+            # Both advanced — bracket tie means they both won this slot.
+            # Impossible under single-elim unless data corruption; fall
+            # back to higher ResultNumeric (deeper run).
+            winner, loser = (t1, t2) if r1 >= r2 else (t2, t1)
+        else:
+            # Neither advanced past this round (both r <= round_). Can't
+            # happen in a real bracket unless one of them didn't actually
+            # play this game. Skip.
             continue
-        winner, loser = (t1, t2) if g1 > g2 else (t2, t1)
         slot_winner[row["Slot"]] = winner
         if round_ > 0:
             games.append({
