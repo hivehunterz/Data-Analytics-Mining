@@ -33,6 +33,16 @@ desktop.ini
 .idea/
 *.swp
 
-# Large data files — keep raw CSV only
+# Model / binary artifacts
 *.pkl
 *.joblib
+*.parquet
+
+# Raw competition data (freely re-downloadable from Kaggle; 173 MB total, 1 file over GitHub's 100MB limit)
+new dataset/
+V2/data_raw/kaggle/
+V2/data_processed/
+
+# V2 outputs (regenerable)
+V2/outputs/logs/*.log
+
