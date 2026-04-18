@@ -1,0 +1,47 @@
+{
+  "final_features": [
+    "diff_NetEff",
+    "diff_OffEff",
+    "diff_DefEff",
+    "diff_EFGPct",
+    "diff_TORate",
+    "diff_ORPct",
+    "diff_FTRate",
+    "diff_OppEFGPct",
+    "diff_OppTORate",
+    "diff_DRPct",
+    "diff_OppFTRate",
+    "diff_FGPct",
+    "diff_FG3Pct",
+    "diff_FTPct",
+    "diff_OppFGPct",
+    "diff_AstPerGame",
+    "diff_TOPerGame",
+    "diff_StlPerGame",
+    "diff_BlkPerGame",
+    "diff_ORPerGame",
+    "diff_DRPerGame",
+    "diff_Tempo",
+    "diff_WinPct",
+    "diff_PointDiff",
+    "diff_AvgPts",
+    "diff_AvgOppPts",
+    "diff_Elo",
+    "diff_EloSlope",
+    "diff_ColleyRating",
+    "diff_SRS",
+    "diff_GLMQuality",
+    "diff_MasseyMean",
+    "diff_MasseyMedian",
+    "diff_MasseyMin"
+  ],
+  "final_brier": 0.18957476196139836,
+  "history": [
+    {
+      "iter": 1,
+      "dropped": "diff_SeedNum",
+      "new_brier": 0.18957476196139836,
+      "n_features": 34
+    }
+  ]
+}

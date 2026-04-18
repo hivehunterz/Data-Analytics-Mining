@@ -1,0 +1,80 @@
+{
+  "final_features": [
+    "diff_NetEff",
+    "diff_OffEff",
+    "diff_DefEff",
+    "diff_EFGPct",
+    "diff_TORate",
+    "diff_ORPct",
+    "diff_OppEFGPct",
+    "diff_OppTORate",
+    "diff_DRPct",
+    "diff_FG3Pct",
+    "diff_OppFGPct",
+    "diff_TOPerGame",
+    "diff_BlkPerGame",
+    "diff_ORPerGame",
+    "diff_DRPerGame",
+    "diff_Tempo",
+    "diff_WinPct",
+    "diff_PointDiff",
+    "diff_AvgPts",
+    "diff_AvgOppPts",
+    "diff_Elo",
+    "diff_EloSlope",
+    "diff_ColleyRating",
+    "diff_SRS",
+    "diff_GLMQuality",
+    "diff_OppQltyPtsWon",
+    "diff_HarryRating",
+    "diff_Elo_x_Colley",
+    "diff_SRS_x_Colley",
+    "diff_PointDiff_x_Colley",
+    "diff_SeedNum"
+  ],
+  "final_brier": 0.1373116076197651,
+  "history": [
+    {
+      "iter": 1,
+      "dropped": "diff_FTPct",
+      "new_brier": 0.14004975715375304,
+      "n_features": 37
+    },
+    {
+      "iter": 2,
+      "dropped": "diff_FTRate",
+      "new_brier": 0.13951036017838275,
+      "n_features": 36
+    },
+    {
+      "iter": 3,
+      "dropped": "diff_FGPct",
+      "new_brier": 0.139015298894785,
+      "n_features": 35
+    },
+    {
+      "iter": 4,
+      "dropped": "diff_PowerConf",
+      "new_brier": 0.1385542271396755,
+      "n_features": 34
+    },
+    {
+      "iter": 5,
+      "dropped": "diff_OppFTRate",
+      "new_brier": 0.13809567923169788,
+      "n_features": 33
+    },
+    {
+      "iter": 6,
+      "dropped": "diff_StlPerGame",
+      "new_brier": 0.1376658031055898,
+      "n_features": 32
+    },
+    {
+      "iter": 7,
+      "dropped": "diff_AstPerGame",
+      "new_brier": 0.1373116076197651,
+      "n_features": 31
+    }
+  ]
+}
