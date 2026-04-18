@@ -70,10 +70,11 @@ def build_submission_matchups(
 ) -> pd.DataFrame:
     """
     Same as build_tourney_matchups but for Stage 2 submission pairs.
-    sample_sub has columns Season, T1, T2 (T1 < T2 already).
-    No label (unknown outcomes).
+    sample_sub has columns ID, Season, T1, T2 (T1 < T2 already).
+    No label (unknown outcomes). Preserves the ID column for submission.
     """
-    g = sample_sub[["Season", "T1", "T2"]].copy()
+    keep = [c for c in ["ID", "Season", "T1", "T2"] if c in sample_sub.columns]
+    g = sample_sub[keep].copy()
     g = _merge_features(g, feat_df, "T1", feature_cols, "_T1")
     g = _merge_features(g, feat_df, "T2", feature_cols, "_T2")
     for c in feature_cols:

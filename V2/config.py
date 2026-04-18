@@ -59,9 +59,13 @@ ELO_K              = 20
 ELO_HOME_ADV       = 100
 ELO_MEAN_REVERSION = 0.75    # carry-over each season
 
-# Model hyperparameters (start at Kevin's, retune in CV)
-LR_C_MEN      = 100.0
-LR_C_WOMEN    = 0.15
+# Model hyperparameters — tuned via LOSO CV sweep (scripts/13_tune_c_and_clip.py).
+# Our feature set is larger and more correlated than Kevin's, so stronger
+# regularization (lower C) generalizes better.
+#   Men:   C=0.01  (Kevin used 100; we sweep preferred 0.01, Brier 0.1851)
+#   Women: C=0.10  (Kevin used 0.15; we sweep preferred 0.10,  Brier 0.1370)
+LR_C_MEN      = 0.01
+LR_C_WOMEN    = 0.10
 
 # Clipping
 CLIP_LO, CLIP_HI = 0.03, 0.97
