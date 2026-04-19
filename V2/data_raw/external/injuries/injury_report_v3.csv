@@ -1,0 +1,17 @@
+team,player,status,mpg,ppg,team_ppg,role_share,source,stats_verified
+Louisville,Mikel Brown Jr.,OUT,33.0,18.2,77.0,0.342,cbs_mar15,True
+Duke,Patrick Ngongba,GAME_TIME,18.0,6.5,82.0,0.149,cbs_mar15,False
+Duke,Caleb Foster,OUT,25.0,8.5,82.0,0.203,cbs_mar15,True
+Texas Tech,JT Toppin,OUT_FOR_SEASON,34.8,21.8,78.0,0.384,cbs_mar15,True
+BYU,Richie Saunders,OUT_FOR_SEASON,32.0,18.0,82.0,0.325,cbs_mar15,True
+North Carolina,Caleb Wilson,OUT_FOR_SEASON,30.0,14.0,81.0,0.28,cbs_mar15,False
+Michigan,L.J. Cason,OUT_FOR_SEASON,15.0,5.0,82.0,0.121,cbs_mar15,False
+Clemson,Carter Welling,OUT_FOR_SEASON,18.0,6.0,76.0,0.149,cbs_mar15,False
+Wisconsin,Nolan Winter,GAME_TIME,28.0,10.5,78.0,0.241,cbs_mar15,False
+Villanova,Matt Hodge,OUT_FOR_SEASON,22.0,7.5,78.0,0.182,cbs_mar15,False
+Pennsylvania,Ethan Roberts,OUT,28.0,11.0,74.0,0.251,cbs_mar15,False
+Arkansas,Karter Knox,OUT,27.0,11.0,85.0,0.232,rotowire_mar19,False
+Arkansas,Nick Pringle,GAME_TIME,19.0,4.6,85.0,0.136,rotowire_mar19,True
+UCLA,Donovan Dent,GAME_TIME,30.0,14.5,77.0,0.291,cbs_mar15,False
+UCLA,Tyler Bilodeau,OUT,30.2,17.6,77.0,0.322,cbs_mar15,True
+Alabama,Aden Holloway,OUT,29.0,16.8,85.0,0.293,cbs_mar15,True

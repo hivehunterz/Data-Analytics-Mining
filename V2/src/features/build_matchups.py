@@ -36,11 +36,20 @@ def build_tourney_matchups(
       - label           = 1 if T1 won else 0
       - T1_SeedNum, T2_SeedNum  (if seeds_df provided)
     """
-    g = tourney_compact[["Season", "DayNum", "WTeamID", "LTeamID"]].copy()
+    has_scores = {"WScore", "LScore"}.issubset(tourney_compact.columns)
+    cols = ["Season", "DayNum", "WTeamID", "LTeamID"] + (["WScore", "LScore"] if has_scores else [])
+    g = tourney_compact[cols].copy()
     g["T1"] = g[["WTeamID", "LTeamID"]].min(axis=1)
     g["T2"] = g[["WTeamID", "LTeamID"]].max(axis=1)
     g["label"] = (g["WTeamID"] == g["T1"]).astype(int)
-    g = g.drop(columns=["WTeamID", "LTeamID"])
+    if has_scores:
+        # margin = T1_score - T2_score (sign conventional to T1)
+        g["margin"] = np.where(g["WTeamID"] == g["T1"],
+                                g["WScore"] - g["LScore"],
+                                g["LScore"] - g["WScore"]).astype(float)
+        g = g.drop(columns=["WTeamID", "LTeamID", "WScore", "LScore"])
+    else:
+        g = g.drop(columns=["WTeamID", "LTeamID"])
 
     g = _merge_features(g, feat_df, "T1", feature_cols, "_T1")
     g = _merge_features(g, feat_df, "T2", feature_cols, "_T2")

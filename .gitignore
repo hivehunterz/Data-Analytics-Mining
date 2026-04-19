@@ -46,3 +46,6 @@ V2/data_processed/
 # V2 outputs (regenerable)
 V2/outputs/logs/*.log
 
+# CatBoost training artifacts
+V2/catboost_info/
+

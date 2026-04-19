@@ -1,32 +1,36 @@
 favorite,underdog,spread,source
-Duke,Siena,27.5,cbs
-Ohio State,TCU,2.5,cbs
-St. John's (NY),Northern Iowa,9.5,cbs
-Kansas,California Baptist,13.5,cbs
-Louisville,South Florida,6.5,cbs
-Michigan State,North Dakota State,16.5,cbs
-UCLA,UCF,5.5,cbs
-Connecticut,Furman,20.5,cbs
-Iowa,Clemson,2.5,cbs
-Vanderbilt,McNeese,11.5,cbs
-Nebraska,Troy,13.5,cbs
-North Carolina,Virginia Commonwealth,2.5,cbs
-Illinois,Pennsylvania,21.5,cbs
-Saint Mary's,Texas A&M,2.5,cbs
-Houston,Idaho,22.5,cbs
-Arizona,Long Island University,29.5,cbs
-Utah State,Villanova,1.5,cbs
-Wisconsin,High Point,11.5,cbs
-Arkansas,Hawaii,15.5,cbs
-Gonzaga,Kennesaw State,18.5,cbs
-Miami (FL),Missouri,1.5,cbs
-Purdue,Queens (NC),23.5,cbs
-Georgia,Saint Louis,1.5,cbs
-Texas Tech,Akron,8.5,cbs
-Alabama,Hofstra,12.5,cbs
-Virginia,Wright State,17.5,cbs
-Kentucky,Santa Clara,3.5,cbs
-Iowa State,Tennessee State,23.5,cbs
+Duke,Siena,27.5,cbs_r64
+Ohio State,TCU,2.5,cbs_r64
+St. John's (NY),Northern Iowa,9.5,cbs_r64
+Kansas,California Baptist,13.5,cbs_r64
+Louisville,South Florida,6.5,cbs_r64
+Michigan State,North Dakota State,16.5,cbs_r64
+UCLA,UCF,5.5,cbs_r64
+Connecticut,Furman,20.5,cbs_r64
+Iowa,Clemson,2.5,cbs_r64
+Vanderbilt,McNeese,11.5,cbs_r64
+Nebraska,Troy,13.5,cbs_r64
+North Carolina,Virginia Commonwealth,2.5,cbs_r64
+Illinois,Pennsylvania,21.5,cbs_r64
+Saint Mary's,Texas A&M,2.5,cbs_r64
+Houston,Idaho,22.5,cbs_r64
+Arizona,Long Island University,29.5,cbs_r64
+Utah State,Villanova,1.5,cbs_r64
+Wisconsin,High Point,11.5,cbs_r64
+Arkansas,Hawaii,15.5,cbs_r64
+Gonzaga,Kennesaw State,18.5,cbs_r64
+Miami (FL),Missouri,1.5,cbs_r64
+Purdue,Queens (NC),23.5,cbs_r64
+Georgia,Saint Louis,1.5,cbs_r64
+Texas Tech,Akron,8.5,cbs_r64
+Alabama,Hofstra,12.5,cbs_r64
+Virginia,Wright State,17.5,cbs_r64
+Kentucky,Santa Clara,3.5,cbs_r64
+Iowa State,Tennessee State,23.5,cbs_r64
+Michigan,Howard,30.5,cbs_r64_addl
+Florida,Prairie View A&M,35.5,cbs_r64_addl
+Tennessee,Miami (OH),12.5,betmgm_r64
+BYU,Texas,2.5,draftkings_r64
 Purdue,Miami (FL),7.5,espn_r32
 Iowa State,Kentucky,4.5,espn_r32
 St. John's (NY),Kansas,3.5,espn_r32
@@ -35,3 +39,15 @@ Florida,Iowa,10.5,espn_r32
 Arizona,Utah State,11.5,espn_r32
 Connecticut,UCLA,4.5,espn_r32
 Texas Tech,Alabama,1.5,espn_r32
+Michigan,Saint Louis,12.5,yahoo_r32
+Michigan State,Louisville,4.5,yahoo_r32
+Duke,TCU,11.5,yahoo_r32
+Houston,Texas A&M,10.5,yahoo_r32
+Gonzaga,Texas,6.5,yahoo_r32
+Illinois,Virginia Commonwealth,11.5,yahoo_r32
+Vanderbilt,Nebraska,1.5,yahoo_r32
+Arkansas,High Point,11.5,yahoo_r32
+UMBC,Howard,1.5,first_four
+Lehigh,Prairie View A&M,3.5,first_four
+SMU,Miami (OH),6.5,first_four
+Texas,NC State,1.5,first_four
