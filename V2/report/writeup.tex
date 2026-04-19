@@ -160,7 +160,7 @@ Names in external sources rarely match Kaggle spellings exactly: a news article 
 
 \subsection{Training windows and holdout}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Men's training:} 2015--2025 excluding 2020 (the cancelled COVID tournament); 11 seasons, 742 matchup pairs. The 2015 start ensures no season requires Barttorvik imputation.
+    \item \textbf{Men's training:} 2015--2025 excluding 2020 (the cancelled COVID tournament); 10 seasons, 742 matchup pairs. The 2015 start ensures no season requires Barttorvik imputation.
     \item \textbf{Women's training:} 2010--2025 excluding 2020; 15 seasons, 961 pairs. Detailed women's box scores are absent before 2010.
     \item \textbf{Holdout:} 2026 for both genders. The holdout was never used for model selection, hyperparameter tuning, or feature pruning.
 \end{itemize}
@@ -169,7 +169,7 @@ Names in external sources rarely match Kaggle spellings exactly: a news article 
 \section{Feature Engineering}
 \label{sec:features}
 
-After backward elimination, the final feature sets contain 38 features for men and 31 for women.
+After backward elimination, the final feature sets contain 39 features for men and 31 for women.
 
 \subsection{Feature inventory}
 
@@ -604,7 +604,7 @@ LightGBM as primary & \texttt{06\_model\_comparison.py} & Best men's Brier 0.186
 \subsection{What did not work}
 \begin{itemize}[leftmargin=*]
     \item \textbf{XGBoost as sole classifier.} Pure XGBoost is CV-worse than pure LR by 0.003 on men's and 0.009 on women's. It contributes only in a blend on men's, and does not help women's at any blend weight.
-    \item \textbf{LOSO ensemble averaging} (Section \ref{sec:alternatives}). Each ensemble member saw only 10 of 11 men's seasons, losing roughly 10\,\% of training data per member. Variance reduction did not compensate.
+    \item \textbf{LOSO ensemble averaging} (Section \ref{sec:alternatives}). Each ensemble member saw only 9 of 10 men's seasons, losing roughly 10\,\% of training data per member. Variance reduction did not compensate.
     \item \textbf{Tighter probability clipping in 2026.} No clipping is post-hoc optimal in a chalky year. In a typical year we would default to $[0.03, 0.97]$.
     \item \textbf{Isotonic calibration on LR probabilities.} Effective only in-sample; the LR is already well-calibrated so the out-of-fold distribution differs from the full-model distribution, and naive isotonic-on-output overfits.
 \end{itemize}
