@@ -64,7 +64,7 @@ ELO_MEAN_REVERSION = 0.75    # carry-over each season
 # regularization (lower C) generalizes better.
 #   Men:   C=0.01  (Kevin used 100; we sweep preferred 0.01, Brier 0.1851)
 #   Women: C=0.10  (Kevin used 0.15; we sweep preferred 0.10,  Brier 0.1370)
-LR_C_MEN      = 0.01
+LR_C_MEN      = 0.03
 LR_C_WOMEN    = 0.10
 
 # Clipping
